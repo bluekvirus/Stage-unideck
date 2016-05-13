@@ -1,0 +1,17 @@
+//define screen size
+@screen-watch: 1px; //? everything smaller then 480px
+@screen-phone: 480px;
+@screen-tablet: 760px;
+@screen-computer: 992px;
+
+//min and max
+@screen-watch-min: @screen-watch;
+@screen-watch-max: @screen-phone - 1;
+
+@screen-phone-min: @screen-phone;
+@screen-phone-max: @screen-tablet - 1;
+
+@screen-tablet-min: @screen-tablet;
+@screen-tablet-max: @screen-computer - 1;
+
+@screen-computer-min: @screen-computer;
