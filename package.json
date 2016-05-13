@@ -1,0 +1,18 @@
+{
+  "name": "stage-unideck",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.css",
+  "dependencies": {},
+  "devDependencies": {
+    "normalize.css": "^4.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "contributors": [
+    "Tim Lauv <bluekvirus@gmail.com> ",
+    "Patrick Zhu <beavercoding@gmail.com> "
+  ],
+  "license": "MIT"
+}
