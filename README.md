@@ -1,4 +1,5 @@
-# Stagejs-unideck
+Stagejs-unideck
+===============
 Responsive minimum CSS base for Stage.js projects
 
 ```html
@@ -21,3 +22,16 @@ Responsive minimum CSS base for Stage.js projects
         <div class="unit-8"></div>
     </div>
 ```
+
+Contribute
+----------
+1. Clone the project
+2. `npm install`
+3. Install `inotifywait`(apt), `lessc`(npm) and `http-server`(npm) on your machine
+4. Run `watchless.sh`
+5. Serve through `http-server` and test in `index.html`
+
+License
+-------
+Copyright 2016 Tim Lauv, Patrick Zhu. 
+Under the [MIT](http://opensource.org/licenses/MIT) License.
