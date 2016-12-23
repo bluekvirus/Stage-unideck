@@ -1,0 +1,22 @@
+{
+  "name": "stage-unideck",
+  "description": "Responsive minimum CSS base for web projects",
+  "main": "stage-unideck.css",
+  "authors": [
+    "Tim Lauv <bluekvirus@gmail.com>",
+    "Patrick Zhu <beavercoding@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bluekvirus/Stage-unideck",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^5.0.0"
+  }
+}

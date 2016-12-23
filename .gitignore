@@ -1,2 +1,5 @@
-#node_modules
+#npm
 node_modules/
+
+#bower
+bower_components/
