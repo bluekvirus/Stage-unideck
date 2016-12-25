@@ -1,16 +1,4 @@
-body,
-html {
-    height: 100%;
-}
-
-.unit-1,
-.unit-2,
-.unit-3,
-.unit-4,
-.unit-5,
-.unit-6,
-.unit-7,
-.unit-8 {
+.view {
     border: 1px solid #000;
     height: 200px;
 }
