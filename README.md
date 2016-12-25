@@ -25,11 +25,12 @@ Responsive minimum CSS base for Stage.js projects
 
 Contribute
 ----------
-1. Clone the project
-2. `bower install`
-3. Install `inotifywait`(apt), `lessc`(npm) and `http-server`(npm) on your machine
-4. Run `watchless.sh`
-5. Serve through `http-server` and test in `index.html`
+1. Clone the project;
+2. `bower install`;
+3. Install `inotifywait/inotify-tools`(apt), `lessc`(npm), `http-server`(npm) and `forever`(npm) on your dev machine;
+4. Run `start.sh [-p 9000]` then `watchless.sh`;
+5. Test in `index.html`;
+6. Stop server through `ctrl-c` then `stop.sh`;
 
 License
 -------

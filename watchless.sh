@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Note: You will need to install inotifywait (apt) and less (npm)
+# Note: You will need to install inotifywait/inotify-tools (apt) and less (npm)
 #
 # @author Patrick Zhu, Tim Lauv
 # @created 2016.12.18
