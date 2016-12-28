@@ -13,6 +13,7 @@
 	 * 2. The use of `table` rather than `block` is only necessary if using
 	 *    `:before` to contain the top-margins of child elements.
 	 */
+  border-style: none !important;
 }
 .deck:before,
 .deck:after {
@@ -28,6 +29,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-1 {
@@ -53,6 +55,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-2 {
@@ -78,6 +81,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-3 {
@@ -103,6 +107,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-4 {
@@ -128,6 +133,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-5 {
@@ -153,6 +159,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-6 {
@@ -178,6 +185,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-7 {
@@ -203,6 +211,7 @@
   float: left;
   position: relative;
   min-height: 1px;
+  border-style: none !important;
 }
 @media (min-width: 1px) {
   .deck .unit-8 {

@@ -1,9 +1,16 @@
+//no border (layout containers shouldn't have borders)
+.no-border() {
+    border-style: none !important;
+}
+
 //shared unit measures
 .unit-base() {
     float: left;
     position: relative;
     min-height: 1px;
+    .no-border();
 }
+
 //float el container (clearfix)
 .clearfix() {
     overflow: auto;
