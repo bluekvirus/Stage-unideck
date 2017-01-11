@@ -1,4 +1,8 @@
-.view {
+[class^="deck"] {
     border: 1px solid #000;
-    height: 200px;
+}
+
+.view {
+	border: 1px dotted grey;
+	min-height: 100px;
 }

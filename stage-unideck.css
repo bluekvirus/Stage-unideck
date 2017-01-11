@@ -13,7 +13,7 @@
 	 * 2. The use of `table` rather than `block` is only necessary if using
 	 *    `:before` to contain the top-margins of child elements.
 	 */
-  border-style: none !important;
+  box-sizing: border-box !important;
 }
 .deck:before,
 .deck:after {
@@ -25,11 +25,45 @@
 .deck:after {
   clear: both;
 }
+.deck.padded {
+  padding: 0.5em;
+}
+.deck.vfill {
+  height: 100%;
+}
+.deck.vfill > div,
+.deck.vfill ul,
+.deck.vfill ol,
+.deck.vfill section,
+.deck.vfill header,
+.deck.vfill footer,
+.deck.vfill aside,
+.deck.vfill svg,
+.deck.vfill canvas {
+  height: 100%;
+}
 .deck .unit-1 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-1.padded {
+  padding: 0.5em;
+}
+.deck .unit-1.vfill {
+  height: 100%;
+}
+.deck .unit-1.vfill > div,
+.deck .unit-1.vfill ul,
+.deck .unit-1.vfill ol,
+.deck .unit-1.vfill section,
+.deck .unit-1.vfill header,
+.deck .unit-1.vfill footer,
+.deck .unit-1.vfill aside,
+.deck .unit-1.vfill svg,
+.deck .unit-1.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-1 {
@@ -54,8 +88,25 @@
 .deck .unit-2 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-2.padded {
+  padding: 0.5em;
+}
+.deck .unit-2.vfill {
+  height: 100%;
+}
+.deck .unit-2.vfill > div,
+.deck .unit-2.vfill ul,
+.deck .unit-2.vfill ol,
+.deck .unit-2.vfill section,
+.deck .unit-2.vfill header,
+.deck .unit-2.vfill footer,
+.deck .unit-2.vfill aside,
+.deck .unit-2.vfill svg,
+.deck .unit-2.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-2 {
@@ -80,8 +131,25 @@
 .deck .unit-3 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-3.padded {
+  padding: 0.5em;
+}
+.deck .unit-3.vfill {
+  height: 100%;
+}
+.deck .unit-3.vfill > div,
+.deck .unit-3.vfill ul,
+.deck .unit-3.vfill ol,
+.deck .unit-3.vfill section,
+.deck .unit-3.vfill header,
+.deck .unit-3.vfill footer,
+.deck .unit-3.vfill aside,
+.deck .unit-3.vfill svg,
+.deck .unit-3.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-3 {
@@ -106,8 +174,25 @@
 .deck .unit-4 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-4.padded {
+  padding: 0.5em;
+}
+.deck .unit-4.vfill {
+  height: 100%;
+}
+.deck .unit-4.vfill > div,
+.deck .unit-4.vfill ul,
+.deck .unit-4.vfill ol,
+.deck .unit-4.vfill section,
+.deck .unit-4.vfill header,
+.deck .unit-4.vfill footer,
+.deck .unit-4.vfill aside,
+.deck .unit-4.vfill svg,
+.deck .unit-4.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-4 {
@@ -132,8 +217,25 @@
 .deck .unit-5 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-5.padded {
+  padding: 0.5em;
+}
+.deck .unit-5.vfill {
+  height: 100%;
+}
+.deck .unit-5.vfill > div,
+.deck .unit-5.vfill ul,
+.deck .unit-5.vfill ol,
+.deck .unit-5.vfill section,
+.deck .unit-5.vfill header,
+.deck .unit-5.vfill footer,
+.deck .unit-5.vfill aside,
+.deck .unit-5.vfill svg,
+.deck .unit-5.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-5 {
@@ -158,8 +260,25 @@
 .deck .unit-6 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-6.padded {
+  padding: 0.5em;
+}
+.deck .unit-6.vfill {
+  height: 100%;
+}
+.deck .unit-6.vfill > div,
+.deck .unit-6.vfill ul,
+.deck .unit-6.vfill ol,
+.deck .unit-6.vfill section,
+.deck .unit-6.vfill header,
+.deck .unit-6.vfill footer,
+.deck .unit-6.vfill aside,
+.deck .unit-6.vfill svg,
+.deck .unit-6.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-6 {
@@ -184,8 +303,25 @@
 .deck .unit-7 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-7.padded {
+  padding: 0.5em;
+}
+.deck .unit-7.vfill {
+  height: 100%;
+}
+.deck .unit-7.vfill > div,
+.deck .unit-7.vfill ul,
+.deck .unit-7.vfill ol,
+.deck .unit-7.vfill section,
+.deck .unit-7.vfill header,
+.deck .unit-7.vfill footer,
+.deck .unit-7.vfill aside,
+.deck .unit-7.vfill svg,
+.deck .unit-7.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-7 {
@@ -210,8 +346,25 @@
 .deck .unit-8 {
   float: left;
   position: relative;
-  min-height: 1px;
-  border-style: none !important;
+  min-height: 1em;
+  box-sizing: border-box !important;
+}
+.deck .unit-8.padded {
+  padding: 0.5em;
+}
+.deck .unit-8.vfill {
+  height: 100%;
+}
+.deck .unit-8.vfill > div,
+.deck .unit-8.vfill ul,
+.deck .unit-8.vfill ol,
+.deck .unit-8.vfill section,
+.deck .unit-8.vfill header,
+.deck .unit-8.vfill footer,
+.deck .unit-8.vfill aside,
+.deck .unit-8.vfill svg,
+.deck .unit-8.vfill canvas {
+  height: 100%;
 }
 @media (min-width: 1px) {
   .deck .unit-8 {
