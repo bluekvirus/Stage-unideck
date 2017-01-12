@@ -1,14 +1,32 @@
 //no border (layout containers shouldn't have borders)
-.no-border() {
-    border-style: none !important;
+.box-sizing() {
+    box-sizing: border-box !important;
+}
+
+.paddable() {
+    &.padded {
+        padding: @padded-gap-size;
+    }
+}
+
+.vfill() {
+    &.vfill {
+        height: 100%;
+
+        > div, ul, ol, section, header, footer, aside, svg, canvas{
+            height: 100%;
+        }
+    }
 }
 
 //shared unit measures
 .unit-base() {
     float: left;
     position: relative;
-    min-height: 1px;
-    .no-border();
+    min-height: 1em;
+    .box-sizing();
+    .paddable();
+    .vfill();
 }
 
 //float el container (clearfix)
