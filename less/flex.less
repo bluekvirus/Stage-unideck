@@ -1,0 +1,48 @@
+/**
+ * Flex layout .flex --> .unit-* --> .flex --> ...
+ *
+ * With .padded and .vfill (.flex and .unit-* have no height by default) as spacing helpers.
+ *
+ * Note: .flex is not position:relative, .unit-* are.
+ *
+ * @author Tim Lauv
+ * @created 2017.01.11
+ */
+
+.flex {
+	display: flex;
+	width: 100%;
+
+	.box-sizing();
+	.paddable();
+	.vfillable();
+
+	&.vertical {
+		flex-direction: row;
+		&.reverse {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&.horizontal {
+		flex-direction: column;
+		&.reverse {
+			flex-direction: column-reverse;
+		}
+	}
+
+	.unit, .unit-1 {
+		flex: 1 1 0;
+		.unit-base();
+	}
+
+	.unit-2 {
+		flex: 2 2 0;
+		.unit-base();
+	}
+
+	.unit-3 {
+		flex: 3 3 0;
+		.unit-base();
+	}
+}

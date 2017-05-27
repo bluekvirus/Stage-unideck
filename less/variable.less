@@ -1,20 +1,19 @@
-//define screen size
-@screen-watch: 1px; //? everything smaller than 480px
+@screen-watch: 320px;
 @screen-phone: 480px;
-@screen-tablet: 760px;
-@screen-computer: 992px;
+@screen-tablet: 768px;
+@screen-pc: 1024px;
 
-//min and max
-@screen-watch-min: @screen-watch;
-@screen-watch-max: @screen-phone - 1;
+//screen min and max
+@screen-watch-min: 1px;
+@screen-watch-max: @screen-watch;
 
-@screen-phone-min: @screen-phone;
-@screen-phone-max: @screen-tablet - 1;
+@screen-phone-min: @screen-watch;
+@screen-phone-max: @screen-phone;
 
-@screen-tablet-min: @screen-tablet;
-@screen-tablet-max: @screen-computer - 1;
+@screen-tablet-min: @screen-phone;
+@screen-tablet-max: @screen-pc;
 
-@screen-computer-min: @screen-computer;
+@screen-pc-min: @screen-pc;
 
 //default padding size
 @padded-gap-size: 0.5em;

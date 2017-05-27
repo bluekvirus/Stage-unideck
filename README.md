@@ -27,7 +27,7 @@ Contribute
 ----------
 1. Clone the project;
 2. `bower install`;
-3. Install `inotifywait/inotify-tools`(apt), `lessc`(npm), `http-server`(npm) and `forever`(npm) on your dev machine;
+3. Install `inotifywait/inotify-tools`(apt), `less`(npm), `http-server`(npm) and `forever`(npm) on your dev machine;
 4. Run `start.sh [-p 9000]` then `watchless.sh`;
 5. Test in `index.html`;
 6. Stop server through `ctrl-c` then `stop.sh`;

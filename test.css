@@ -1,8 +1,12 @@
-[class^="deck"] {
+.deck {
     border: 1px solid #000;
 }
 
-.view {
+.deck [class^="unit-"] {
 	border: 1px dotted grey;
+}
+
+.view {
+	border: 1px dashed lightgrey;
 	min-height: 100px;
 }

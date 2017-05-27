@@ -1,53 +1,82 @@
 <html>
 	<head>
-		<!-- css reset -->
-		<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
 		<!-- main css -->
 		<link rel="stylesheet" href="stage-unideck.css">
 		<!-- test styles -->
-		<link rel="stylesheet" href="defaults-h5bp.css">
 		<link rel="stylesheet" href="test.css">
 	</head>
 	<body>
 
-		<p>test .deck and .unit1-8</p>
-
-		<div class="deck">
-			<div class="unit-1"><div class="view">.unit-1</div></div>
-			<div class="unit-2"><div class="view">.unit-2</div></div>
-			<div class="unit-3"><div class="view">.unit-3</div></div>
-			<div class="unit-4"><div class="view">.unit-4</div></div>
-			<div class="unit-5"><div class="view">.unit-5</div></div>
-			<div class="unit-6"><div class="view">.unit-6</div></div>
-			<div class="unit-7"><div class="view">.unit-7</div></div>
-			<div class="unit-8"><div class="view">.unit-8</div></div>
-		</div>
-		
-		<p>test .padded</p>
-		<div class="deck padded">
-			<div class="unit-1 padded"><div class="view">.unit-1</div></div>
-			<div class="unit-2 padded"><div class="view">.unit-2</div></div>
-			<div class="unit-3 padded"><div class="view">.unit-3</div></div>
-			<div class="unit-4 padded"><div class="view">.unit-4</div></div>
-			<div class="unit-5 padded"><div class="view">.unit-5</div></div>
-			<div class="unit-6 padded"><div class="view">.unit-6</div></div>
-			<div class="unit-7 padded"><div class="view">.unit-7</div></div>
-			<div class="unit-8 padded"><div class="view">.unit-8</div></div>
-		</div>
-
-		<p>test .vfill</p>
-		<div style="height: 400px;">
+		<!-- Hidden-<screen> -->
+		<div class="frame" style="z-index: -1;">
 			<div class="deck padded vfill">
-				<div class="unit-1 padded "><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded "><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded "><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded "><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded vfill"><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded vfill"><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded vfill"><div class="view">.unit-1</div></div>
-				<div class="unit-1 padded vfill"><div class="view">.unit-1</div></div>
+				<div class="hidden-pc hidden-tablet" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">phone</div>
+				<div class="hidden-pc hidden-phone hidden-watch" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">tablet</div>
+				<div class="hidden-watch hidden-phone hidden-tablet" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">pc</div>
 			</div>
 		</div>
 
+		<!-- Deck -->
+		<div class="frame">
+			<h1 style="text-align: center;">Stage.js-Unideck 8.4.2.1</h1>
+			<p>test <span style="color:blue;">.deck</span></p>
+			<div class="deck">
+				<div class="unit-1"><div class="view">.unit-1</div></div>
+				<div class="unit-2"><div class="view">.unit-2</div></div>
+				<div class="unit-3"><div class="view">.unit-3</div></div>
+				<div class="unit-4"><div class="view">.unit-4</div></div>
+				<div class="unit-5"><div class="view">.unit-5</div></div>
+				<div class="unit-6"><div class="view">.unit-6</div></div>
+				<div class="unit-7"><div class="view">.unit-7</div></div>
+				<div class="unit-8"><div class="view">.unit-8</div></div>
+			</div>
+			
+			<p>test <span style="color:blue;">.deck .padded</span></p>
+			<div class="deck padded">
+				<div class="unit-1 padded"><div class="view">.unit-1 .padded</div></div>
+				<div class="unit-2 padded"><div class="view">.unit-2 .padded</div></div>
+				<div class="unit-3 padded"><div class="view">.unit-3 .padded</div></div>
+				<div class="unit-4 padded"><div class="view">.unit-4 .padded</div></div>
+				<div class="unit-5 padded"><div class="view">.unit-5 .padded</div></div>
+				<div class="unit-6 padded"><div class="view">.unit-6 .padded</div></div>
+				<div class="unit-7 padded"><div class="view">.unit-7 .padded</div></div>
+				<div class="unit-8 padded"><div class="view">.unit-8 .padded</div></div>
+			</div>
+
+			<p>test <span style="color:blue;">.deck .padded .vfill</span> (style="height: 50%;")</p>
+			<div style="height: 50%;">
+				<div class="deck padded vfill">
+					<div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+					<div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+					<div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+					<div class="unit-1 padded "><div class="view">.unit-1 .padded</div><div style="position: absolute;left: 0;bottom: 0;height: 2em;width: 2em;background: red"></div></div>
+					<div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+					<div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+					<div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+					<div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Flex -->
+		<div class="frame" style="z-index: -1;">
+			<div class="flex vfill half">
+				<div class="unit-3 view"></div>
+				<div class="unit view"></div>
+				<div class="unit-2 view"></div>
+				<div class="unit view"></div>
+			</div>
+			<div class="flex horizontal vfill half">
+				<div class="unit view"></div>
+				<div class="unit-2 view"></div>
+				<div class="unit-3 view">
+					<div class="flex vfill">
+						<div class="unit view"></div>
+						<div class="unit view"></div>
+						<div class="unit view"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

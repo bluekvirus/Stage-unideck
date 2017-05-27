@@ -1,0 +1,34 @@
+@import (inline) 'normalize-css/normalize.css';
+
+html, body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+@import (inline) 'defaults-h5bp.css';
+
+.hidden-watch {
+	@media (min-width: @screen-watch-min) and (max-width: @screen-watch-max) {
+		display: none;
+	}
+}
+
+.hidden-phone {
+	@media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
+		display: none;
+	}
+}
+
+.hidden-tablet {
+	@media(min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
+		display: none;
+	}
+}
+
+.hidden-pc {
+	@media(min-width: @screen-pc-min) {
+		display: none;
+	}
+}

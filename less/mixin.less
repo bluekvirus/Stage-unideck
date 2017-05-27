@@ -9,50 +9,35 @@
     }
 }
 
-.vfill() {
+.vfillable() {
     &.vfill {
         height: 100%;
 
-        > div, ul, ol, section, header, footer, aside, svg, canvas{
+        &.half {
+            height: 50%;
+        }
+
+        &.third {
+            height: 33.3%;
+        }
+
+        &.quarter {
+            height: 25%;
+        }
+
+        //so child view div will automatically stretch.
+        > div, ul, ol, section, header, footer, aside, svg, canvas {
             height: 100%;
         }
     }
 }
 
-//shared unit measures
+//shared unit measures in a deck
 .unit-base() {
-    float: left;
     position: relative;
     min-height: 1em;
     .box-sizing();
     .paddable();
-    .vfill();
+    .vfillable();
 }
 
-//float el container (clearfix)
-.clearfix() {
-    overflow: auto;
-    zoom: 1;
-    /*
-	 * Clearfix: contain floats (from h5bp:helpers)
-	 *
-	 * For modern browsers
-	 * 1. The space content is one way to avoid an Opera bug when the
-	 *    `contenteditable` attribute is included anywhere else in the document.
-	 *    Otherwise it causes space to appear at the top and bottom of elements
-	 *    that receive the `clearfix` class.
-	 * 2. The use of `table` rather than `block` is only necessary if using
-	 *    `:before` to contain the top-margins of child elements.
-	 */
-    
-    &:before, &:after {
-        content: " ";
-        /* 1 */
-        
-        display: table;
-        /* 2 */
-    }
-    &:after {
-        clear: both;
-    }
-}

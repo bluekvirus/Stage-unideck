@@ -5,7 +5,7 @@
 # @author Patrick Zhu, Tim Lauv
 # @created 2016.12.18
 
-COMPILE_CMD="lessc --verbose ./less/main.less ./stage-unideck.css"
+COMPILE_CMD="lessc --include-path=./:./bower_components --verbose ./less/main.less ./stage-unideck.css"
 
 #1. Refresh main.css
 eval $COMPILE_CMD
