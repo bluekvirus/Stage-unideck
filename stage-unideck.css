@@ -1,3 +1,14 @@
+/**
+ * Stage-unideck minimum responsive/flex layout with CSS reset and helpers.
+ *
+ * How-to
+ * ------
+ * 0. Put <meta name="viewport" content="width=device-width, initial-scale=1"> in <head>;
+ * 1. Start with adding a <div class="frame"/> in <body>;
+ * 
+ * @author Tim Lauv, Patrick Zhu
+ * @created 2017.01.11
+ */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /**
@@ -750,18 +761,33 @@ textarea {
     }
 }
 
-@media (min-width: 1px) and (max-width: 320px) {
-  .hidden-watch {
+@media (max-width: 320px) {
+  .hidden-too-small {
     display: none;
   }
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 320px) {
   .hidden-phone {
     display: none;
   }
 }
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 768px) {
+  .hidden-phone {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
   .hidden-tablet {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hidden-tablet {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .hidden-pc {
     display: none;
   }
 }
@@ -875,17 +901,17 @@ textarea {
 .deck .unit-1.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
+@media (max-width: 480px) {
   .deck .unit-1 {
     width: 100%;
   }
 }
-@media (min-width: 320px) {
+@media (min-width: 480px) {
   .deck .unit-1 {
     width: 50%;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .deck .unit-1 {
     width: 25%;
   }
@@ -926,17 +952,17 @@ textarea {
 .deck .unit-2.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-2 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-2 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-2 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-2 {
     width: 50%;
   }
@@ -977,17 +1003,17 @@ textarea {
 .deck .unit-3.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-3 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-3 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-3 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-3 {
     width: 75%;
   }
@@ -1028,17 +1054,17 @@ textarea {
 .deck .unit-4.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-4 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-4 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-4 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-4 {
     width: 100%;
   }
@@ -1079,17 +1105,17 @@ textarea {
 .deck .unit-5.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-5 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-5 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-5 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-5 {
     width: 100%;
   }
@@ -1130,17 +1156,17 @@ textarea {
 .deck .unit-6.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-6 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-6 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-6 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-6 {
     width: 100%;
   }
@@ -1181,17 +1207,17 @@ textarea {
 .deck .unit-7.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-7 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-7 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-7 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-7 {
     width: 100%;
   }
@@ -1232,17 +1258,17 @@ textarea {
 .deck .unit-8.vfill canvas {
   height: 100%;
 }
-@media (min-width: 1px) {
-  .deck .unit-8 {
-    width: 100%;
-  }
-}
-@media (min-width: 320px) {
+@media (max-width: 480px) {
   .deck .unit-8 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit-8 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .deck .unit-8 {
     width: 100%;
   }
@@ -1416,4 +1442,3 @@ textarea {
 .flex .unit-3.vfill canvas {
   height: 100%;
 }
-/*Start with adding a <div class="frame"/> in <body>*/

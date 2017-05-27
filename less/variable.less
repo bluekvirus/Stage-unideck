@@ -1,19 +1,13 @@
-@screen-watch: 320px;
-@screen-phone: 480px;
-@screen-tablet: 768px;
-@screen-pc: 1024px;
 
 //screen min and max
-@screen-watch-min: 1px;
-@screen-watch-max: @screen-watch;
+@screen-phone-min: 320px; //less than this, hidden-* too small to display
+@screen-phone-avg: 480px; //less than this, unit-* goes 100% wide
+@screen-phone-max: 768px;
 
-@screen-phone-min: @screen-watch;
-@screen-phone-max: @screen-phone;
+@screen-tablet-min: 768px;
+@screen-tablet-max: 1024px;
 
-@screen-tablet-min: @screen-phone;
-@screen-tablet-max: @screen-pc;
-
-@screen-pc-min: @screen-pc;
+@screen-pc-min: 1024px;
 
 //default padding size
 @padded-gap-size: 0.5em;

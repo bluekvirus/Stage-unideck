@@ -1,7 +1,12 @@
 <html>
 	<head>
-		<!-- main css -->
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<!-- main css (and mobile scale fix)-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="stage-unideck.css">
+
 		<!-- test styles -->
 		<link rel="stylesheet" href="test.css">
 	</head>
@@ -11,14 +16,14 @@
 		<div class="frame" style="z-index: -1;">
 			<div class="deck padded vfill">
 				<div class="hidden-pc hidden-tablet" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">phone</div>
-				<div class="hidden-pc hidden-phone hidden-watch" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">tablet</div>
-				<div class="hidden-watch hidden-phone hidden-tablet" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">pc</div>
+				<div class="hidden-pc hidden-phone" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">tablet</div>
+				<div class="hidden-phone hidden-tablet" style="position: absolute;left: 1px;top: 1px;height: 2em;background: lightgrey">pc</div>
 			</div>
 		</div>
 
 		<!-- Deck -->
 		<div class="frame">
-			<h1 style="text-align: center;">Stage.js-Unideck 8.4.2.1</h1>
+			<h1 style="text-align: center;">Stage-unideck 8-4-2-1</h1>
 			<p>test <span style="color:blue;">.deck</span></p>
 			<div class="deck">
 				<div class="unit-1"><div class="view">.unit-1</div></div>

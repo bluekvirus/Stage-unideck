@@ -1,3 +1,4 @@
+
 @import (inline) 'normalize-css/normalize.css';
 
 html, body {
@@ -9,26 +10,31 @@ html, body {
 
 @import (inline) 'defaults-h5bp.css';
 
-.hidden-watch {
-	@media (min-width: @screen-watch-min) and (max-width: @screen-watch-max) {
+//not used directly atm... use the 3 .hidden-<screen> from below.
+.hidden-too-small {
+	@media (max-width: @screen-phone-min) {
 		display: none;
 	}
 }
+//----------------------------------------------------------------
 
 .hidden-phone {
+	.hidden-too-small;
 	@media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
 		display: none;
 	}
 }
 
 .hidden-tablet {
-	@media(min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
+	.hidden-too-small;
+	@media (min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
 		display: none;
 	}
 }
 
 .hidden-pc {
-	@media(min-width: @screen-pc-min) {
+	.hidden-too-small;
+	@media (min-width: @screen-pc-min) {
 		display: none;
 	}
 }
