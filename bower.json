@@ -19,7 +19,7 @@
     "h5bp",
     "**/*.sh"
   ],
-  "dependencies": {
+  "devDependencies": {
     "normalize-css": "normalize.css#^5.x.x"
   }
 }
