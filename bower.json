@@ -15,7 +15,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "h5bp",
+    "**/*.sh"
   ],
   "dependencies": {
     "normalize-css": "normalize.css#^5.x.x"

@@ -4,42 +4,43 @@ Responsive minimum CSS base for Stage.js projects
 
 Fluid
 ```html
-    <div class="frame">
-        <div class="deck padded vfill">
-            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
-            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
-            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
-            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div><div style="position: absolute;left: 0;bottom: 0;height: 2em;width: 2em;background: red"></div></div>
-            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
-            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
-            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
-            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
-        </div>
+<!-- Fluid -->
+<div class="frame">
+    <div class="deck padded vfill">
+        <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+        <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+        <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+        <div class="unit-1 padded "><div class="view">.unit-1 .padded</div><div style="position: absolute;left: 0;bottom: 0;height: 2em;width: 2em;background: red"></div></div>
+        <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+        <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+        <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+        <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
     </div>
+</div>
 ```
 
 Flex
 ```html
-    <!-- Flex -->
-    <div class="frame">
-        <div class="flex vfill half">
-            <div class="unit-3 view"></div>
-            <div class="unit view"></div>
-            <div class="unit-2 view"></div>
-            <div class="unit view"></div>
-        </div>
-        <div class="flex horizontal vfill half">
-            <div class="unit view"></div>
-            <div class="unit-2 view"></div>
-            <div class="unit-3 view">
-                <div class="flex vfill">
-                    <div class="unit view"></div>
-                    <div class="unit view"></div>
-                    <div class="unit view"></div>
-                </div>
+<!-- Flex -->
+<div class="frame">
+    <div class="flex vfill half">
+        <div class="unit-3 view"></div>
+        <div class="unit view"></div>
+        <div class="unit-2 view"></div>
+        <div class="unit view"></div>
+    </div>
+    <div class="flex horizontal vfill half">
+        <div class="unit view"></div>
+        <div class="unit-2 view"></div>
+        <div class="unit-3 view">
+            <div class="flex vfill">
+                <div class="unit view"></div>
+                <div class="unit view"></div>
+                <div class="unit view"></div>
             </div>
         </div>
     </div>
+</div>
 ```
 
 Contribute
