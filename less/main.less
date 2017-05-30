@@ -10,16 +10,23 @@
  * @created 2017.01.11
  */
 
-//reset ( normalize + h5bp helpers .clearfix, .invisible, .hidden, hidden-<screen>, basic print @media(query) )
+//reset ( normalize )
 @import './reset.less';
 
-//variables and mixins
-@import './variable.less';
+//variables
+@import './variable/screen.less';
+@import './variable/color.less';
+@import './variable/font.less';
+@import './variable/gap.less';
+@import './variable/border.less';
+
+//mixin fn and helper classes
 @import './mixin.less';
+@import './helper.less';
 
 //container and units
-@import './frame.less';
-@import './deck.less';
-@import './flex.less';
+@import './container/frame.less';
+@import './container/deck.less';
+@import './container/flex.less';
 
 

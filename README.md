@@ -2,24 +2,43 @@ Stagejs-unideck
 ===============
 Responsive minimum CSS base for Stage.js projects
 
+Fluid
 ```html
-    Container usage:
+    <div class="frame">
+        <div class="deck padded vfill">
+            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div></div>
+            <div class="unit-1 padded "><div class="view">.unit-1 .padded</div><div style="position: absolute;left: 0;bottom: 0;height: 2em;width: 2em;background: red"></div></div>
+            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+            <div class="unit-1 padded vfill"><div class="view">.unit-1 .padded .vfill</div></div>
+        </div>
+    </div>
+```
 
-    <div class="deck">
-        <!-- A total of 8 unit lengths available to users. -->
-        <!-- It can also be nested. -->
-        <div class="unit-1"></div>
-        <div class="unit-2"></div>
-        <div class="unit-3"></div>
-        <div class="unit-4">
-            <div class="deck">
-                <div class="unit-6"></div>
+Flex
+```html
+    <!-- Flex -->
+    <div class="frame">
+        <div class="flex vfill half">
+            <div class="unit-3 view"></div>
+            <div class="unit view"></div>
+            <div class="unit-2 view"></div>
+            <div class="unit view"></div>
+        </div>
+        <div class="flex horizontal vfill half">
+            <div class="unit view"></div>
+            <div class="unit-2 view"></div>
+            <div class="unit-3 view">
+                <div class="flex vfill">
+                    <div class="unit view"></div>
+                    <div class="unit view"></div>
+                    <div class="unit view"></div>
+                </div>
             </div>
         </div>
-        <div class="unit-5"></div>
-        <div class="unit-6"></div>
-        <div class="unit-7"></div>
-        <div class="unit-8"></div>
     </div>
 ```
 

@@ -478,6 +478,13 @@ body {
   position: relative;
   overflow: hidden;
 }
+/**
+ * h5bp: .clearfix, .invisible, .hidden, basic print @media(query)
+ * unideck: .hidden-<screen>
+ *
+ * @author Tim Lauv
+ * @created 2017.05.27 
+ */
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -796,6 +803,12 @@ textarea {
     display: none;
   }
 }
+/**
+ * Top most containers inside <body>, for containing .deck or .flex
+ *
+ * @author Tim Lauv
+ * @created 2017.05.27
+ */
 .frame {
   position: absolute;
   top: 0;
@@ -1286,7 +1299,7 @@ textarea {
  * Note: .flex is not position:relative, .unit-* are.
  *
  * @author Tim Lauv
- * @created 2017.01.11
+ * @created 2017.05.27
  */
 .flex {
   display: flex;
