@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-0.5.0+ (2017-05*)
+0.5.1+ (2017-05*)
 ------------------
 1. Added reset.less;
 2. Added var*.less;
@@ -11,6 +11,7 @@ Change Log
 
 working on ...
 
-- impl border/color/font.less in vars;
-- add .loadFont() mixin;
-- add .useBG() mixin;
+- adding .bg() mixin and classes;
+- add .font() mixin;
+- impl border/color in vars;
+

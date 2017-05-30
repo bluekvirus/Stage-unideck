@@ -42,3 +42,19 @@
     .vfillable();
 }
 
+//easy background picz
+.bg(@url) {
+    background: url(@url);
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.vfill {
+        background-size: auto 100%;
+    }
+
+    &.full {
+        background-size: cover;
+    }
+
+    //fixed? (attachment)
+}
