@@ -16,6 +16,7 @@ working on ...
 
 - fix .deck fluid padding bottom missing quirk ?!;
 - colors var (primary-warm/cold, ok, warning, error, info);
+- make .flex units responsive to screens in addition to autoscale;
 - display:grid for .grid container and .unit-*;
 - print (US letter) style for containers;
 - theme-wheel mixin (auto colors by color wheel) ?!;
