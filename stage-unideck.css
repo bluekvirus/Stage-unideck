@@ -1463,11 +1463,15 @@ textarea {
   }
 }
 /**
- * Flex layout .flex --> .unit-* --> .flex --> ...
+ * Flex layout .flex --> .unit-* or .flex --> ...
  *
  * With .padded and .vfill (.flex and .unit-* have no height by default) as spacing helpers.
  *
  * Note: .flex is not position:relative, .unit-* are.
+ * Note: .unit-* as a flexbox item can NOT nest another .flex container, 
+ * 		 put the .flex directly onto .unit-* as the container instead!
+ * Note: .unit-* as a flexbox item can NOT nest another <any> container for it to have height: 100%,
+ * 		 since itself is already stretched by align-items. Use the .unit-* as the container!
  *
  * @author Tim Lauv
  * @created 2017.05.27
@@ -1521,7 +1525,6 @@ textarea {
 .flex .unit,
 .flex .unit-1 {
   flex: 1 1 0;
-  position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
   border-width: 1px;
@@ -1530,22 +1533,6 @@ textarea {
 .flex .unit.padded,
 .flex .unit-1.padded {
   padding: 0.5em;
-}
-.flex .unit.vfill,
-.flex .unit-1.vfill {
-  height: 100%;
-}
-.flex .unit.vfill.half,
-.flex .unit-1.vfill.half {
-  height: 50%;
-}
-.flex .unit.vfill.third,
-.flex .unit-1.vfill.third {
-  height: 33.3%;
-}
-.flex .unit.vfill.quarter,
-.flex .unit-1.vfill.quarter {
-  height: 25%;
 }
 .flex .unit.border,
 .flex .unit-1.border {
@@ -1563,31 +1550,8 @@ textarea {
 .flex .unit-1.double {
   border-style: double;
 }
-.flex .unit.vfill > div,
-.flex .unit-1.vfill > div,
-.flex .unit.vfill > ul,
-.flex .unit-1.vfill > ul,
-.flex .unit.vfill > ol,
-.flex .unit-1.vfill > ol,
-.flex .unit.vfill > section,
-.flex .unit-1.vfill > section,
-.flex .unit.vfill > header,
-.flex .unit-1.vfill > header,
-.flex .unit.vfill > footer,
-.flex .unit-1.vfill > footer,
-.flex .unit.vfill > aside,
-.flex .unit-1.vfill > aside,
-.flex .unit.vfill > svg,
-.flex .unit-1.vfill > svg,
-.flex .unit.vfill > canvas,
-.flex .unit-1.vfill > canvas {
-  height: 100% !important;
-  max-height: 100% !important;
-  min-height: 100% !important;
-}
 .flex .unit-2 {
   flex: 2 2 0;
-  position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
   border-width: 1px;
@@ -1595,18 +1559,6 @@ textarea {
 }
 .flex .unit-2.padded {
   padding: 0.5em;
-}
-.flex .unit-2.vfill {
-  height: 100%;
-}
-.flex .unit-2.vfill.half {
-  height: 50%;
-}
-.flex .unit-2.vfill.third {
-  height: 33.3%;
-}
-.flex .unit-2.vfill.quarter {
-  height: 25%;
 }
 .flex .unit-2.border {
   border-style: solid;
@@ -1620,22 +1572,8 @@ textarea {
 .flex .unit-2.double {
   border-style: double;
 }
-.flex .unit-2.vfill > div,
-.flex .unit-2.vfill > ul,
-.flex .unit-2.vfill > ol,
-.flex .unit-2.vfill > section,
-.flex .unit-2.vfill > header,
-.flex .unit-2.vfill > footer,
-.flex .unit-2.vfill > aside,
-.flex .unit-2.vfill > svg,
-.flex .unit-2.vfill > canvas {
-  height: 100% !important;
-  max-height: 100% !important;
-  min-height: 100% !important;
-}
 .flex .unit-3 {
   flex: 3 3 0;
-  position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
   border-width: 1px;
@@ -1643,18 +1581,6 @@ textarea {
 }
 .flex .unit-3.padded {
   padding: 0.5em;
-}
-.flex .unit-3.vfill {
-  height: 100%;
-}
-.flex .unit-3.vfill.half {
-  height: 50%;
-}
-.flex .unit-3.vfill.third {
-  height: 33.3%;
-}
-.flex .unit-3.vfill.quarter {
-  height: 25%;
 }
 .flex .unit-3.border {
   border-style: solid;
@@ -1667,17 +1593,4 @@ textarea {
 }
 .flex .unit-3.double {
   border-style: double;
-}
-.flex .unit-3.vfill > div,
-.flex .unit-3.vfill > ul,
-.flex .unit-3.vfill > ol,
-.flex .unit-3.vfill > section,
-.flex .unit-3.vfill > header,
-.flex .unit-3.vfill > footer,
-.flex .unit-3.vfill > aside,
-.flex .unit-3.vfill > svg,
-.flex .unit-3.vfill > canvas {
-  height: 100% !important;
-  max-height: 100% !important;
-  min-height: 100% !important;
 }

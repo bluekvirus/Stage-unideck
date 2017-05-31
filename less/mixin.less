@@ -5,8 +5,8 @@
  * @created 2017.01.11
  */
 
-//shared unit measures in a deck or a flex container
-.unit-base() {
+//shared unit measures in a deck container
+.deck-unit() {
     position: relative;
     min-height: 6 * @gap-padded-size;
     .box-sizing();
@@ -14,7 +14,7 @@
     .vfillable();
     .borders();
 
-    //.vfill-ed .unit also means immediate child view div will automatically stretch!
+    //.vfill-ed .unit also means immediate child el will automatically stretch!
     &.vfill {
         > div,
         > ul,
@@ -30,6 +30,17 @@
             min-height: 100% !important;
         }
     }
+}
+
+//shared unit measures in a flex container
+.flex-unit() {
+    //this one doesn't honor position: relative;
+    //this one doesn't honor .vfill helpers and immediate el control;
+    min-height: 6 * @gap-padded-size;
+    .box-sizing();
+    .paddable();
+    .borders();
+
 }
 
 .box-sizing() {

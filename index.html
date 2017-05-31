@@ -66,24 +66,24 @@
 
 			<!-- Flex -->
 			<div class="frame">
-				<p>test <span style="color:blue;">.flex .vfill .half</span></p>
+				<p>test <span style="color:blue;">.flex .vfill .half</span> (no need to nest .view + .vfill div within .unit-*) </p>
 				<div class="flex vfill half">
-					<div class="unit-3 padded dotted"><div class="view">.unit-3 .padded</div></div>
-					<div class="unit padded dotted"><div class="view">.unit-1 .padded</div></div>
-					<div class="unit-2 padded dotted vfill"><div class="view">.unit-2 .padded .vfill</div></div>
-					<div class="unit padded dotted"><div class="view">.unit-1 .padded</div></div>
+					<div class="unit-3 padded dotted">.unit-3 .padded</div>
+					<div class="unit padded dotted">.unit-1 .padded</div>
+					<div class="unit-2 padded dotted">.unit-2 .padded</div>
+					<div class="unit padded dotted">.unit-1 .padded</div>
 				</div>
 
-				<p>test <span style="color:blue;">.flex .horizontal .vfill .half</span></p>
+				<p>test <span style="color:blue;">.flex .horizontal .vfill .half</span> (no need to nest .view + .vfill div within .unit-*) </p>
 				<div class="flex horizontal vfill half">
-					<div class="unit padded dotted vfill"><div class="view">.unit-1 .padded .vfill</div></div>
-					<div class="unit-2 padded dotted"><div class="view">.unit-2 .padded</div></div>
-					<div class="unit-3 padded dotted">
-						<div class="flex vfill">
-							<div class="unit padded dotted"><div class="view">.unit-1 .padded</div></div>
-							<div class="unit padded dotted"><div class="view">.unit-1 .padded</div></div>
-							<div class="unit padded dotted"><div class="view">.unit-1 .padded</div></div>
-						</div>
+					<div class="unit padded dotted">.unit-1 .padded</div>
+					<div class="unit-2 padded dotted">.unit-2 .padded</div>
+					<div class="unit-3 padded dotted flex">
+						<!-- <div class="vfill flex"> -->
+						<div class="unit padded dotted">.unit-1 .padded</div>
+						<div class="unit padded dotted">.unit-1 .padded</div>
+						<div class="unit padded dotted">.unit-1 .padded</div>
+						<!-- </div> -->
 					</div>
 				</div>
 			</div>
