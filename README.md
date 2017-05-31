@@ -32,12 +32,10 @@ Flex
     <div class="flex horizontal vfill half">
         <div class="unit view"></div>
         <div class="unit-2 view"></div>
-        <div class="unit-3 view">
-            <div class="flex vfill">
-                <div class="unit view"></div>
-                <div class="unit view"></div>
-                <div class="unit view"></div>
-            </div>
+        <div class="unit-3 flex">
+            <div class="unit view"></div>
+            <div class="unit view"></div>
+            <div class="unit view"></div>
         </div>
     </div>
 </div>
