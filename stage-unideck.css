@@ -965,7 +965,9 @@ textarea {
 .deck .unit-1.vfill > svg,
 .deck .unit.vfill > canvas,
 .deck .unit-1.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit,
@@ -1034,7 +1036,9 @@ textarea {
 .deck .unit-2.vfill > aside,
 .deck .unit-2.vfill > svg,
 .deck .unit-2.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-2 {
@@ -1099,7 +1103,9 @@ textarea {
 .deck .unit-3.vfill > aside,
 .deck .unit-3.vfill > svg,
 .deck .unit-3.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-3 {
@@ -1164,7 +1170,9 @@ textarea {
 .deck .unit-4.vfill > aside,
 .deck .unit-4.vfill > svg,
 .deck .unit-4.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-4 {
@@ -1229,7 +1237,9 @@ textarea {
 .deck .unit-5.vfill > aside,
 .deck .unit-5.vfill > svg,
 .deck .unit-5.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-5 {
@@ -1294,7 +1304,9 @@ textarea {
 .deck .unit-6.vfill > aside,
 .deck .unit-6.vfill > svg,
 .deck .unit-6.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-6 {
@@ -1359,7 +1371,9 @@ textarea {
 .deck .unit-7.vfill > aside,
 .deck .unit-7.vfill > svg,
 .deck .unit-7.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-7 {
@@ -1424,7 +1438,9 @@ textarea {
 .deck .unit-8.vfill > aside,
 .deck .unit-8.vfill > svg,
 .deck .unit-8.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 @media (max-width: 480px) {
   .deck .unit-8 {
@@ -1565,7 +1581,9 @@ textarea {
 .flex .unit-1.vfill > svg,
 .flex .unit.vfill > canvas,
 .flex .unit-1.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 .flex .unit-2 {
   flex: 2 2 0;
@@ -1611,7 +1629,9 @@ textarea {
 .flex .unit-2.vfill > aside,
 .flex .unit-2.vfill > svg,
 .flex .unit-2.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
 .flex .unit-3 {
   flex: 3 3 0;
@@ -1657,5 +1677,7 @@ textarea {
 .flex .unit-3.vfill > aside,
 .flex .unit-3.vfill > svg,
 .flex .unit-3.vfill > canvas {
-  height: 100%;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
 }
