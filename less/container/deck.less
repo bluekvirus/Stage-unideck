@@ -1,5 +1,5 @@
 /**
- * Floating responsive layout .deck --> .unit-* --> .deck --> ...
+ * Floating responsive layout .deck --> .unit-* --> .deck/.flex/.frame --> ...
  *
  * With .padded and .vfill (.deck and .unit-* have no height by default) as spacing helpers.
  *
@@ -19,8 +19,13 @@
 	.vfillable();
 	.borders();
 
-	[class^="unit-"]{
-		float: left;
+	//fix: .unit:last-of-type margin for honoring last line of spacing during padded vfill-ed .deck scrolling
+	&.padded {
+		&.vfill {
+			> [class^="unit-"]:last-of-type {
+				margin-bottom: @gap-padded-size;
+			}			
+		}
 	}
 
 	.unit, .unit-1 {

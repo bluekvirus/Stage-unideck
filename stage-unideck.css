@@ -900,11 +900,12 @@ textarea {
 .deck.double {
   border-style: double;
 }
-.deck [class^="unit-"] {
-  float: left;
+.deck.padded.vfill > [class^="unit-"]:last-of-type {
+  margin-bottom: 0.5em;
 }
 .deck .unit,
 .deck .unit-1 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -994,6 +995,7 @@ textarea {
   }
 }
 .deck .unit-2 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1061,6 +1063,7 @@ textarea {
   }
 }
 .deck .unit-3 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1128,6 +1131,7 @@ textarea {
   }
 }
 .deck .unit-4 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1195,6 +1199,7 @@ textarea {
   }
 }
 .deck .unit-5 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1262,6 +1267,7 @@ textarea {
   }
 }
 .deck .unit-6 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1329,6 +1335,7 @@ textarea {
   }
 }
 .deck .unit-7 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1396,6 +1403,7 @@ textarea {
   }
 }
 .deck .unit-8 {
+  float: left;
   position: relative;
   min-height: 3em;
   box-sizing: border-box !important;
@@ -1470,8 +1478,8 @@ textarea {
  * Note: .flex is not position:relative, .unit-* are.
  * Note: .unit-* as a flexbox item can NOT nest another .flex container, 
  * 		 put the .flex directly onto .unit-* as the container instead!
- * Note: .unit-* as a flexbox item can NOT nest another <any> container for it to have height: 100%,
- * 		 since itself is already stretched by align-items. Use the .unit-* as the container!
+ * Note: .unit-* as a flexbox item can NOT nest another <any tag> el container for it to have height: 100%,
+ * 		 since itself is already stretched by align-items. Use the .unit-* as the el container!
  *
  * @author Tim Lauv
  * @created 2017.05.27
