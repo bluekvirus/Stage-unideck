@@ -1,5 +1,5 @@
 /**
- * h5bp: .clearfix, .invisible, .hidden, basic print @media(query)
+ * h5bp: .clearfix, .invisible, .hidden, @media print reset
  * unideck: .hidden-<screen>
  *
  * @author Tim Lauv
@@ -8,31 +8,37 @@
 
 @import (inline) 'h5bp/defaults-h5bp.css';
 
-//not used directly atm... use the 3 .hidden-<screen> from below.
-.hidden-too-small {
-	@media (max-width: @screen-phone-min) {
-		display: none;
+.hidden-print {
+	@media print {
+		display: none !important;
 	}
 }
-//----------------------------------------------------------------
+
+//--not used directly atm... use the 3 .hidden-<screen> from below.--
+.hidden-too-small {
+	@media (max-width: @screen-phone-min) {
+		display: none !important;
+	}
+}
+//-------------------------------------------------------------------
 
 .hidden-phone {
 	.hidden-too-small;
 	@media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
-		display: none;
+		display: none !important;
 	}
 }
 
 .hidden-tablet {
 	.hidden-too-small;
 	@media (min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
-		display: none;
+		display: none !important;
 	}
 }
 
 .hidden-pc {
 	.hidden-too-small;
 	@media (min-width: @screen-pc-min) {
-		display: none;
+		display: none !important;
 	}
 }

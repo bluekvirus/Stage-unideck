@@ -479,7 +479,13 @@ body {
   overflow: hidden;
 }
 /**
- * h5bp: .clearfix, .invisible, .hidden, basic print @media(query)
+ * Mixins for giving certain .class additional css features;
+ *
+ * @author Tim Lauv
+ * @created 2017.01.11
+ */
+/**
+ * h5bp: .clearfix, .invisible, .hidden, @media print reset
  * unideck: .hidden-<screen>
  *
  * @author Tim Lauv
@@ -768,43 +774,50 @@ textarea {
     }
 }
 
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
 @media (max-width: 320px) {
   .hidden-too-small {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 320px) {
   .hidden-phone {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .hidden-phone {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 320px) {
   .hidden-tablet {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .hidden-tablet {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 320px) {
   .hidden-pc {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 1024px) {
   .hidden-pc {
-    display: none;
+    display: none !important;
   }
 }
 /**
- * Top most containers inside <body>, for containing .deck or .flex
+ * Top most containers inside <body>, for containing .deck or .flex, even other .frame(s)
+ *
+ * Note: a immediate .frame within a .frame becomes stacked.
  *
  * @author Tim Lauv
  * @created 2017.05.27
@@ -815,7 +828,11 @@ textarea {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow-y: auto;
+  overflow: auto;
+}
+.frame > .frame {
+  position: relative;
+  width: 100%;
 }
 /**
  * Floating responsive layout .deck --> .unit-* --> .deck --> ...
@@ -832,17 +849,19 @@ textarea {
   overflow: auto;
   zoom: 1;
   /*
-	 * Clearfix: contain floats (from h5bp:helpers)
-	 *
-	 * For modern browsers
-	 * 1. The space content is one way to avoid an Opera bug when the
-	 *    `contenteditable` attribute is included anywhere else in the document.
-	 *    Otherwise it causes space to appear at the top and bottom of elements
-	 *    that receive the `clearfix` class.
-	 * 2. The use of `table` rather than `block` is only necessary if using
-	 *    `:before` to contain the top-margins of child elements.
-	 */
+     * Clearfix: contain floats (from h5bp:helpers)
+     *
+     * For modern browsers
+     * 1. The space content is one way to avoid an Opera bug when the
+     *    `contenteditable` attribute is included anywhere else in the document.
+     *    Otherwise it causes space to appear at the top and bottom of elements
+     *    that receive the `clearfix` class.
+     * 2. The use of `table` rather than `block` is only necessary if using
+     *    `:before` to contain the top-margins of child elements.
+     */
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck:before,
 .deck:after {
@@ -869,75 +888,115 @@ textarea {
 .deck.vfill.quarter {
   height: 25%;
 }
-.deck.vfill > div,
-.deck.vfill ul,
-.deck.vfill ol,
-.deck.vfill section,
-.deck.vfill header,
-.deck.vfill footer,
-.deck.vfill aside,
-.deck.vfill svg,
-.deck.vfill canvas {
-  height: 100%;
+.deck.border {
+  border-style: solid;
+}
+.deck.dashed {
+  border-style: dashed;
+}
+.deck.dotted {
+  border-style: dotted;
+}
+.deck.double {
+  border-style: double;
 }
 .deck [class^="unit-"] {
   float: left;
 }
+.deck .unit,
 .deck .unit-1 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
+.deck .unit.padded,
 .deck .unit-1.padded {
   padding: 0.5em;
 }
+.deck .unit.vfill,
 .deck .unit-1.vfill {
   height: 100%;
 }
+.deck .unit.vfill.half,
 .deck .unit-1.vfill.half {
   height: 50%;
 }
+.deck .unit.vfill.third,
 .deck .unit-1.vfill.third {
   height: 33.3%;
 }
+.deck .unit.vfill.quarter,
 .deck .unit-1.vfill.quarter {
   height: 25%;
 }
+.deck .unit.border,
+.deck .unit-1.border {
+  border-style: solid;
+}
+.deck .unit.dashed,
+.deck .unit-1.dashed {
+  border-style: dashed;
+}
+.deck .unit.dotted,
+.deck .unit-1.dotted {
+  border-style: dotted;
+}
+.deck .unit.double,
+.deck .unit-1.double {
+  border-style: double;
+}
+.deck .unit.vfill > div,
 .deck .unit-1.vfill > div,
-.deck .unit-1.vfill ul,
-.deck .unit-1.vfill ol,
-.deck .unit-1.vfill section,
-.deck .unit-1.vfill header,
-.deck .unit-1.vfill footer,
-.deck .unit-1.vfill aside,
-.deck .unit-1.vfill svg,
-.deck .unit-1.vfill canvas {
+.deck .unit.vfill > ul,
+.deck .unit-1.vfill > ul,
+.deck .unit.vfill > ol,
+.deck .unit-1.vfill > ol,
+.deck .unit.vfill > section,
+.deck .unit-1.vfill > section,
+.deck .unit.vfill > header,
+.deck .unit-1.vfill > header,
+.deck .unit.vfill > footer,
+.deck .unit-1.vfill > footer,
+.deck .unit.vfill > aside,
+.deck .unit-1.vfill > aside,
+.deck .unit.vfill > svg,
+.deck .unit-1.vfill > svg,
+.deck .unit.vfill > canvas,
+.deck .unit-1.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
+  .deck .unit,
   .deck .unit-1 {
     width: 100%;
   }
 }
 @media (min-width: 480px) {
+  .deck .unit,
   .deck .unit-1 {
     width: 50%;
   }
 }
 @media (min-width: 768px) {
+  .deck .unit,
   .deck .unit-1 {
     width: 25%;
   }
 }
 @media (min-width: 1024px) {
+  .deck .unit,
   .deck .unit-1 {
     width: 12.5%;
   }
 }
 .deck .unit-2 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-2.padded {
   padding: 0.5em;
@@ -954,15 +1013,27 @@ textarea {
 .deck .unit-2.vfill.quarter {
   height: 25%;
 }
+.deck .unit-2.border {
+  border-style: solid;
+}
+.deck .unit-2.dashed {
+  border-style: dashed;
+}
+.deck .unit-2.dotted {
+  border-style: dotted;
+}
+.deck .unit-2.double {
+  border-style: double;
+}
 .deck .unit-2.vfill > div,
-.deck .unit-2.vfill ul,
-.deck .unit-2.vfill ol,
-.deck .unit-2.vfill section,
-.deck .unit-2.vfill header,
-.deck .unit-2.vfill footer,
-.deck .unit-2.vfill aside,
-.deck .unit-2.vfill svg,
-.deck .unit-2.vfill canvas {
+.deck .unit-2.vfill > ul,
+.deck .unit-2.vfill > ol,
+.deck .unit-2.vfill > section,
+.deck .unit-2.vfill > header,
+.deck .unit-2.vfill > footer,
+.deck .unit-2.vfill > aside,
+.deck .unit-2.vfill > svg,
+.deck .unit-2.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -987,8 +1058,10 @@ textarea {
 }
 .deck .unit-3 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-3.padded {
   padding: 0.5em;
@@ -1005,15 +1078,27 @@ textarea {
 .deck .unit-3.vfill.quarter {
   height: 25%;
 }
+.deck .unit-3.border {
+  border-style: solid;
+}
+.deck .unit-3.dashed {
+  border-style: dashed;
+}
+.deck .unit-3.dotted {
+  border-style: dotted;
+}
+.deck .unit-3.double {
+  border-style: double;
+}
 .deck .unit-3.vfill > div,
-.deck .unit-3.vfill ul,
-.deck .unit-3.vfill ol,
-.deck .unit-3.vfill section,
-.deck .unit-3.vfill header,
-.deck .unit-3.vfill footer,
-.deck .unit-3.vfill aside,
-.deck .unit-3.vfill svg,
-.deck .unit-3.vfill canvas {
+.deck .unit-3.vfill > ul,
+.deck .unit-3.vfill > ol,
+.deck .unit-3.vfill > section,
+.deck .unit-3.vfill > header,
+.deck .unit-3.vfill > footer,
+.deck .unit-3.vfill > aside,
+.deck .unit-3.vfill > svg,
+.deck .unit-3.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -1038,8 +1123,10 @@ textarea {
 }
 .deck .unit-4 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-4.padded {
   padding: 0.5em;
@@ -1056,15 +1143,27 @@ textarea {
 .deck .unit-4.vfill.quarter {
   height: 25%;
 }
+.deck .unit-4.border {
+  border-style: solid;
+}
+.deck .unit-4.dashed {
+  border-style: dashed;
+}
+.deck .unit-4.dotted {
+  border-style: dotted;
+}
+.deck .unit-4.double {
+  border-style: double;
+}
 .deck .unit-4.vfill > div,
-.deck .unit-4.vfill ul,
-.deck .unit-4.vfill ol,
-.deck .unit-4.vfill section,
-.deck .unit-4.vfill header,
-.deck .unit-4.vfill footer,
-.deck .unit-4.vfill aside,
-.deck .unit-4.vfill svg,
-.deck .unit-4.vfill canvas {
+.deck .unit-4.vfill > ul,
+.deck .unit-4.vfill > ol,
+.deck .unit-4.vfill > section,
+.deck .unit-4.vfill > header,
+.deck .unit-4.vfill > footer,
+.deck .unit-4.vfill > aside,
+.deck .unit-4.vfill > svg,
+.deck .unit-4.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -1089,8 +1188,10 @@ textarea {
 }
 .deck .unit-5 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-5.padded {
   padding: 0.5em;
@@ -1107,15 +1208,27 @@ textarea {
 .deck .unit-5.vfill.quarter {
   height: 25%;
 }
+.deck .unit-5.border {
+  border-style: solid;
+}
+.deck .unit-5.dashed {
+  border-style: dashed;
+}
+.deck .unit-5.dotted {
+  border-style: dotted;
+}
+.deck .unit-5.double {
+  border-style: double;
+}
 .deck .unit-5.vfill > div,
-.deck .unit-5.vfill ul,
-.deck .unit-5.vfill ol,
-.deck .unit-5.vfill section,
-.deck .unit-5.vfill header,
-.deck .unit-5.vfill footer,
-.deck .unit-5.vfill aside,
-.deck .unit-5.vfill svg,
-.deck .unit-5.vfill canvas {
+.deck .unit-5.vfill > ul,
+.deck .unit-5.vfill > ol,
+.deck .unit-5.vfill > section,
+.deck .unit-5.vfill > header,
+.deck .unit-5.vfill > footer,
+.deck .unit-5.vfill > aside,
+.deck .unit-5.vfill > svg,
+.deck .unit-5.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -1140,8 +1253,10 @@ textarea {
 }
 .deck .unit-6 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-6.padded {
   padding: 0.5em;
@@ -1158,15 +1273,27 @@ textarea {
 .deck .unit-6.vfill.quarter {
   height: 25%;
 }
+.deck .unit-6.border {
+  border-style: solid;
+}
+.deck .unit-6.dashed {
+  border-style: dashed;
+}
+.deck .unit-6.dotted {
+  border-style: dotted;
+}
+.deck .unit-6.double {
+  border-style: double;
+}
 .deck .unit-6.vfill > div,
-.deck .unit-6.vfill ul,
-.deck .unit-6.vfill ol,
-.deck .unit-6.vfill section,
-.deck .unit-6.vfill header,
-.deck .unit-6.vfill footer,
-.deck .unit-6.vfill aside,
-.deck .unit-6.vfill svg,
-.deck .unit-6.vfill canvas {
+.deck .unit-6.vfill > ul,
+.deck .unit-6.vfill > ol,
+.deck .unit-6.vfill > section,
+.deck .unit-6.vfill > header,
+.deck .unit-6.vfill > footer,
+.deck .unit-6.vfill > aside,
+.deck .unit-6.vfill > svg,
+.deck .unit-6.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -1191,8 +1318,10 @@ textarea {
 }
 .deck .unit-7 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-7.padded {
   padding: 0.5em;
@@ -1209,15 +1338,27 @@ textarea {
 .deck .unit-7.vfill.quarter {
   height: 25%;
 }
+.deck .unit-7.border {
+  border-style: solid;
+}
+.deck .unit-7.dashed {
+  border-style: dashed;
+}
+.deck .unit-7.dotted {
+  border-style: dotted;
+}
+.deck .unit-7.double {
+  border-style: double;
+}
 .deck .unit-7.vfill > div,
-.deck .unit-7.vfill ul,
-.deck .unit-7.vfill ol,
-.deck .unit-7.vfill section,
-.deck .unit-7.vfill header,
-.deck .unit-7.vfill footer,
-.deck .unit-7.vfill aside,
-.deck .unit-7.vfill svg,
-.deck .unit-7.vfill canvas {
+.deck .unit-7.vfill > ul,
+.deck .unit-7.vfill > ol,
+.deck .unit-7.vfill > section,
+.deck .unit-7.vfill > header,
+.deck .unit-7.vfill > footer,
+.deck .unit-7.vfill > aside,
+.deck .unit-7.vfill > svg,
+.deck .unit-7.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -1242,8 +1383,10 @@ textarea {
 }
 .deck .unit-8 {
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .deck .unit-8.padded {
   padding: 0.5em;
@@ -1260,15 +1403,27 @@ textarea {
 .deck .unit-8.vfill.quarter {
   height: 25%;
 }
+.deck .unit-8.border {
+  border-style: solid;
+}
+.deck .unit-8.dashed {
+  border-style: dashed;
+}
+.deck .unit-8.dotted {
+  border-style: dotted;
+}
+.deck .unit-8.double {
+  border-style: double;
+}
 .deck .unit-8.vfill > div,
-.deck .unit-8.vfill ul,
-.deck .unit-8.vfill ol,
-.deck .unit-8.vfill section,
-.deck .unit-8.vfill header,
-.deck .unit-8.vfill footer,
-.deck .unit-8.vfill aside,
-.deck .unit-8.vfill svg,
-.deck .unit-8.vfill canvas {
+.deck .unit-8.vfill > ul,
+.deck .unit-8.vfill > ol,
+.deck .unit-8.vfill > section,
+.deck .unit-8.vfill > header,
+.deck .unit-8.vfill > footer,
+.deck .unit-8.vfill > aside,
+.deck .unit-8.vfill > svg,
+.deck .unit-8.vfill > canvas {
   height: 100%;
 }
 @media (max-width: 480px) {
@@ -1305,6 +1460,8 @@ textarea {
   display: flex;
   width: 100%;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .flex.padded {
   padding: 0.5em;
@@ -1321,16 +1478,17 @@ textarea {
 .flex.vfill.quarter {
   height: 25%;
 }
-.flex.vfill > div,
-.flex.vfill ul,
-.flex.vfill ol,
-.flex.vfill section,
-.flex.vfill header,
-.flex.vfill footer,
-.flex.vfill aside,
-.flex.vfill svg,
-.flex.vfill canvas {
-  height: 100%;
+.flex.border {
+  border-style: solid;
+}
+.flex.dashed {
+  border-style: dashed;
+}
+.flex.dotted {
+  border-style: dotted;
+}
+.flex.double {
+  border-style: double;
 }
 .flex.vertical {
   flex-direction: row;
@@ -1348,8 +1506,10 @@ textarea {
 .flex .unit-1 {
   flex: 1 1 0;
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .flex .unit.padded,
 .flex .unit-1.padded {
@@ -1371,31 +1531,49 @@ textarea {
 .flex .unit-1.vfill.quarter {
   height: 25%;
 }
+.flex .unit.border,
+.flex .unit-1.border {
+  border-style: solid;
+}
+.flex .unit.dashed,
+.flex .unit-1.dashed {
+  border-style: dashed;
+}
+.flex .unit.dotted,
+.flex .unit-1.dotted {
+  border-style: dotted;
+}
+.flex .unit.double,
+.flex .unit-1.double {
+  border-style: double;
+}
 .flex .unit.vfill > div,
 .flex .unit-1.vfill > div,
-.flex .unit.vfill ul,
-.flex .unit-1.vfill ul,
-.flex .unit.vfill ol,
-.flex .unit-1.vfill ol,
-.flex .unit.vfill section,
-.flex .unit-1.vfill section,
-.flex .unit.vfill header,
-.flex .unit-1.vfill header,
-.flex .unit.vfill footer,
-.flex .unit-1.vfill footer,
-.flex .unit.vfill aside,
-.flex .unit-1.vfill aside,
-.flex .unit.vfill svg,
-.flex .unit-1.vfill svg,
-.flex .unit.vfill canvas,
-.flex .unit-1.vfill canvas {
+.flex .unit.vfill > ul,
+.flex .unit-1.vfill > ul,
+.flex .unit.vfill > ol,
+.flex .unit-1.vfill > ol,
+.flex .unit.vfill > section,
+.flex .unit-1.vfill > section,
+.flex .unit.vfill > header,
+.flex .unit-1.vfill > header,
+.flex .unit.vfill > footer,
+.flex .unit-1.vfill > footer,
+.flex .unit.vfill > aside,
+.flex .unit-1.vfill > aside,
+.flex .unit.vfill > svg,
+.flex .unit-1.vfill > svg,
+.flex .unit.vfill > canvas,
+.flex .unit-1.vfill > canvas {
   height: 100%;
 }
 .flex .unit-2 {
   flex: 2 2 0;
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .flex .unit-2.padded {
   padding: 0.5em;
@@ -1412,22 +1590,36 @@ textarea {
 .flex .unit-2.vfill.quarter {
   height: 25%;
 }
+.flex .unit-2.border {
+  border-style: solid;
+}
+.flex .unit-2.dashed {
+  border-style: dashed;
+}
+.flex .unit-2.dotted {
+  border-style: dotted;
+}
+.flex .unit-2.double {
+  border-style: double;
+}
 .flex .unit-2.vfill > div,
-.flex .unit-2.vfill ul,
-.flex .unit-2.vfill ol,
-.flex .unit-2.vfill section,
-.flex .unit-2.vfill header,
-.flex .unit-2.vfill footer,
-.flex .unit-2.vfill aside,
-.flex .unit-2.vfill svg,
-.flex .unit-2.vfill canvas {
+.flex .unit-2.vfill > ul,
+.flex .unit-2.vfill > ol,
+.flex .unit-2.vfill > section,
+.flex .unit-2.vfill > header,
+.flex .unit-2.vfill > footer,
+.flex .unit-2.vfill > aside,
+.flex .unit-2.vfill > svg,
+.flex .unit-2.vfill > canvas {
   height: 100%;
 }
 .flex .unit-3 {
   flex: 3 3 0;
   position: relative;
-  min-height: 1em;
+  min-height: 3em;
   box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
 }
 .flex .unit-3.padded {
   padding: 0.5em;
@@ -1444,14 +1636,26 @@ textarea {
 .flex .unit-3.vfill.quarter {
   height: 25%;
 }
+.flex .unit-3.border {
+  border-style: solid;
+}
+.flex .unit-3.dashed {
+  border-style: dashed;
+}
+.flex .unit-3.dotted {
+  border-style: dotted;
+}
+.flex .unit-3.double {
+  border-style: double;
+}
 .flex .unit-3.vfill > div,
-.flex .unit-3.vfill ul,
-.flex .unit-3.vfill ol,
-.flex .unit-3.vfill section,
-.flex .unit-3.vfill header,
-.flex .unit-3.vfill footer,
-.flex .unit-3.vfill aside,
-.flex .unit-3.vfill svg,
-.flex .unit-3.vfill canvas {
+.flex .unit-3.vfill > ul,
+.flex .unit-3.vfill > ol,
+.flex .unit-3.vfill > section,
+.flex .unit-3.vfill > header,
+.flex .unit-3.vfill > footer,
+.flex .unit-3.vfill > aside,
+.flex .unit-3.vfill > svg,
+.flex .unit-3.vfill > canvas {
   height: 100%;
 }

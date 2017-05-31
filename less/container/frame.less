@@ -1,5 +1,7 @@
 /**
- * Top most containers inside <body>, for containing .deck or .flex
+ * Top most containers inside <body>, for containing .deck or .flex, even other .frame(s)
+ *
+ * Note: a immediate .frame within a .frame becomes stacked.
  *
  * @author Tim Lauv
  * @created 2017.05.27
@@ -11,5 +13,11 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	overflow-y: auto;
+	overflow: auto;
+
+	//.frame(s) within a .frame become stacked on top of each other
+	> .frame {
+		position: relative;
+		width: 100%;
+	}
 }
