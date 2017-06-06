@@ -1,9 +1,9 @@
 /**
  * Flex layout .flex --> .unit-* [+.flex] --> .unit-* [+.flex] --> ...
  *
- * With .padded and .vfill (.flex and .unit-* have no height by default) as spacing helpers.
+ * With .padded, .vfill and borders (.flex have no height by default) as spacing helpers.
  *
- * Note: .flex is not position:relative, .unit-* are.
+ * Note: .flex and .unit-* have no position:relative.
  * Note: .unit-* as a flexbox item can NOT nest another .flex container, 
  * 		 put the .flex directly onto .unit-* as the container instead!
  * Note: .unit-* as a flexbox item can NOT nest another <any tag> el container for it to have height: 100%,

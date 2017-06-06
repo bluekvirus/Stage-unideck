@@ -1,6 +1,14 @@
 /**
  * Grid layout container (+mixins)
  *
+ * .grid() --> .grid-item()
+ *
+ * With .padded, .vfill and borders (.grid() have no height by default) as spacing helpers.
+ *
+ * Note: .grid() and .grid-item() have no position:relative;
+ * Note: .grid-item() can NOT nest another <any tag> el container for it to have height: 100%,
+ * 		 since itself is already stretched by align-items. Use the .grid-item() as the el container!
+ *
  * Ref
  * ---
  * https://css-tricks.com/snippets/css/complete-guide-grid/
