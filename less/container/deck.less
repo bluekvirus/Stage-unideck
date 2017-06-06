@@ -19,15 +19,6 @@
 	.vfillable();
 	.borders();
 
-	//fix: .unit:last-of-type margin for honoring last line of spacing during padded vfill-ed .deck scrolling
-	&.padded {
-		&.vfill {
-			> [class^="unit-"]:last-of-type {
-				margin-bottom: @gap-padded-size;
-			}			
-		}
-	}
-
 	.unit, .unit-1 {
 		.deck-unit();
 		@media (max-width: @screen-phone-avg) {
@@ -155,4 +146,32 @@
 			width: 100%;
 		}
 	}
+}
+
+//shared unit measures in a deck container
+.deck-unit() {
+    float: left;
+    position: relative;
+    min-height: 6 * @gap-padded-size;
+    .box-sizing();
+    .paddable();
+    .vfillable();
+    .borders();
+
+    //.vfill-ed .unit also means immediate view <div> will automatically stretch!
+    &.vfill {
+        > div,
+        > ul,
+        > ol,
+        > section,
+        > header,
+        > footer,
+        > aside,
+        > svg,
+        > canvas {
+            height: 100% !important;
+            max-height: 100% !important;
+            min-height: 100% !important;
+        }
+    }
 }

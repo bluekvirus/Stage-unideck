@@ -9,6 +9,19 @@
  * @author Tim Lauv, Patrick Zhu
  * @created 2017.01.11
  */
+/**
+ * Browser alignment and quirk fixes
+ *
+ * Requires
+ * --------
+ * 1. modernizr.js
+ * 2. detectizr.js
+ *
+ * These js libs will add appropriate browser css classes to trigger the fixes.
+ *
+ * @author Tim Lauv
+ * @created 2017.05.27
+ */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /**
@@ -478,6 +491,9 @@ body {
   position: relative;
   overflow: hidden;
 }
+html.firefox .deck.padded.vfill > [class^="unit-"]:last-of-type {
+  margin-bottom: 0.5em;
+}
 /**
  * Mixins for giving certain .class additional css features;
  *
@@ -486,7 +502,7 @@ body {
  */
 /**
  * h5bp: .clearfix, .invisible, .hidden, @media print reset
- * unideck: .hidden-<screen>
+ * unideck: .hidden-<screen>, .media-<screen>({...rules...})
  *
  * @author Tim Lauv
  * @created 2017.05.27 
@@ -815,7 +831,9 @@ textarea {
   }
 }
 /**
- * Top most containers inside <body>, for containing .deck or .flex, even other .frame(s)
+ * Top most containers inside <body>.
+ *
+ * .frame --> .deck/.flex/.frame --> ...
  *
  * Note: a immediate .frame within a .frame becomes stacked.
  *
@@ -835,7 +853,7 @@ textarea {
   width: 100%;
 }
 /**
- * Floating responsive layout .deck --> .unit-* --> .deck --> ...
+ * Floating responsive layout .deck --> .unit-* --> .deck/.flex/.frame --> ...
  *
  * With .padded and .vfill (.deck and .unit-* have no height by default) as spacing helpers.
  *
@@ -899,9 +917,6 @@ textarea {
 }
 .deck.double {
   border-style: double;
-}
-.deck.padded.vfill > [class^="unit-"]:last-of-type {
-  margin-bottom: 0.5em;
 }
 .deck .unit,
 .deck .unit-1 {
@@ -1471,7 +1486,7 @@ textarea {
   }
 }
 /**
- * Flex layout .flex --> .unit-* or .flex --> ...
+ * Flex layout .flex --> .unit-* [+.flex] --> .unit-* [+.flex] --> ...
  *
  * With .padded and .vfill (.flex and .unit-* have no height by default) as spacing helpers.
  *
@@ -1600,5 +1615,138 @@ textarea {
   border-style: dotted;
 }
 .flex .unit-3.double {
+  border-style: double;
+}
+/**
+ * Grid layout container (+mixins)
+ *
+ * Ref
+ * ---
+ * https://css-tricks.com/snippets/css/complete-guide-grid/
+ * 
+ * @author Tim Lauv
+ * @created 2017.06.06
+ */
+.grid.grid-default {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 60px auto 40px;
+  box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
+}
+.grid.grid-default.vfill {
+  height: 100%;
+}
+.grid.grid-default.vfill.half {
+  height: 50%;
+}
+.grid.grid-default.vfill.third {
+  height: 33.3%;
+}
+.grid.grid-default.vfill.quarter {
+  height: 25%;
+}
+.grid.grid-default.padded {
+  padding: 0.5em;
+}
+.grid.grid-default.border {
+  border-style: solid;
+}
+.grid.grid-default.dashed {
+  border-style: dashed;
+}
+.grid.grid-default.dotted {
+  border-style: dotted;
+}
+.grid.grid-default.double {
+  border-style: double;
+}
+.grid.grid-default .grid-item-a {
+  grid-column: 1 / 9;
+  grid-row: 1;
+  box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
+}
+.grid.grid-default .grid-item-a.padded {
+  padding: 0.5em;
+}
+.grid.grid-default .grid-item-a.border {
+  border-style: solid;
+}
+.grid.grid-default .grid-item-a.dashed {
+  border-style: dashed;
+}
+.grid.grid-default .grid-item-a.dotted {
+  border-style: dotted;
+}
+.grid.grid-default .grid-item-a.double {
+  border-style: double;
+}
+.grid.grid-default .grid-item-b {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
+}
+.grid.grid-default .grid-item-b.padded {
+  padding: 0.5em;
+}
+.grid.grid-default .grid-item-b.border {
+  border-style: solid;
+}
+.grid.grid-default .grid-item-b.dashed {
+  border-style: dashed;
+}
+.grid.grid-default .grid-item-b.dotted {
+  border-style: dotted;
+}
+.grid.grid-default .grid-item-b.double {
+  border-style: double;
+}
+.grid.grid-default .grid-item-c {
+  grid-column: 3 / 9;
+  grid-row: 2;
+  box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
+}
+.grid.grid-default .grid-item-c.padded {
+  padding: 0.5em;
+}
+.grid.grid-default .grid-item-c.border {
+  border-style: solid;
+}
+.grid.grid-default .grid-item-c.dashed {
+  border-style: dashed;
+}
+.grid.grid-default .grid-item-c.dotted {
+  border-style: dotted;
+}
+.grid.grid-default .grid-item-c.double {
+  border-style: double;
+}
+.grid.grid-default .grid-item-d {
+  grid-column: 1 / 9;
+  grid-row: 3;
+  box-sizing: border-box !important;
+  border-width: 1px;
+  border-radius: 0;
+}
+.grid.grid-default .grid-item-d.padded {
+  padding: 0.5em;
+}
+.grid.grid-default .grid-item-d.border {
+  border-style: solid;
+}
+.grid.grid-default .grid-item-d.dashed {
+  border-style: dashed;
+}
+.grid.grid-default .grid-item-d.dotted {
+  border-style: dotted;
+}
+.grid.grid-default .grid-item-d.double {
   border-style: double;
 }

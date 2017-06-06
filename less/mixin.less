@@ -5,45 +5,6 @@
  * @created 2017.01.11
  */
 
-//shared unit measures in a deck container
-.deck-unit() {
-    float: left;
-    position: relative;
-    min-height: 6 * @gap-padded-size;
-    .box-sizing();
-    .paddable();
-    .vfillable();
-    .borders();
-
-    //.vfill-ed .unit also means immediate child el will automatically stretch!
-    &.vfill {
-        > div,
-        > ul,
-        > ol,
-        > section,
-        > header,
-        > footer,
-        > aside,
-        > svg,
-        > canvas {
-            height: 100% !important;
-            max-height: 100% !important;
-            min-height: 100% !important;
-        }
-    }
-}
-
-//shared unit measures in a flex container
-.flex-unit() {
-    //this one doesn't honor position: relative;
-    //this one doesn't honor .vfill helpers and immediate el control;
-    min-height: 6 * @gap-padded-size;
-    .box-sizing();
-    .paddable();
-    .borders();
-
-}
-
 .box-sizing() {
     //so that border grows inwards with width/height set;
     box-sizing: border-box !important;

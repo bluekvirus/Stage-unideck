@@ -1,6 +1,6 @@
 /**
  * h5bp: .clearfix, .invisible, .hidden, @media print reset
- * unideck: .hidden-<screen>
+ * unideck: .hidden-<screen>, .media-<screen>({...rules...})
  *
  * @author Tim Lauv
  * @created 2017.05.27 
@@ -8,37 +8,67 @@
 
 @import (inline) 'h5bp/defaults-h5bp.css';
 
+//hidden content helpers
 .hidden-print {
-	@media print {
+	.media-print({
 		display: none !important;
-	}
+	})
 }
 
-//--not used directly atm... use the 3 .hidden-<screen> from below.--
 .hidden-too-small {
-	@media (max-width: @screen-phone-min) {
+	.media-too-small({
 		display: none !important;
-	}
+	})
 }
-//-------------------------------------------------------------------
 
 .hidden-phone {
 	.hidden-too-small;
-	@media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
+	.media-phone({
 		display: none !important;
-	}
+	})
 }
 
 .hidden-tablet {
 	.hidden-too-small;
-	@media (min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
+	.media-tablet({
 		display: none !important;
-	}
+	})
 }
 
 .hidden-pc {
 	.hidden-too-small;
-	@media (min-width: @screen-pc-min) {
+	.media-pc({
 		display: none !important;
+	})
+}
+
+//screen spec styles wrapping helpers (mixins)
+.media-print(@rules) {
+	@media print {
+		@rules();
+	}
+}
+
+.media-too-small(@rules) {
+	@media (max-width: @screen-phone-min) {
+		@rules();
+	}
+}
+
+.media-phone(@rules) {
+	@media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
+		@rules();
+	} 
+}
+
+.media-tablet(@rules) {
+	@media (min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
+		@rules();
+	}
+}
+
+.media-pc(@rules) {
+	@media (min-width: @screen-pc-min) {
+		@rules();
 	}
 }

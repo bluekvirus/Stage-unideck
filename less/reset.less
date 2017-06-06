@@ -1,4 +1,18 @@
+/**
+ * Browser alignment and quirk fixes
+ *
+ * Requires
+ * --------
+ * 1. modernizr.js
+ * 2. detectizr.js
+ *
+ * These js libs will add appropriate browser css classes to trigger the fixes.
+ *
+ * @author Tim Lauv
+ * @created 2017.05.27
+ */
 
+//alignment
 @import (inline) 'normalize-css/normalize.css';
 
 html, body {
@@ -8,3 +22,18 @@ html, body {
 	overflow: hidden;
 }
 
+//quirk fixes
+html {
+	&.firefox {
+		.deck {
+			//fix: .unit:last-of-type margin for honoring last line of spacing during padded vfill-ed .deck scrolling
+			&.padded {
+				&.vfill {
+					> [class^="unit-"]:last-of-type {
+						margin-bottom: @gap-padded-size;
+					}			
+				}
+			}
+		}
+	}
+}

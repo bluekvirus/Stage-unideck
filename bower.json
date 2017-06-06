@@ -1,6 +1,6 @@
 {
   "name": "stage-unideck",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Responsive minimum CSS base for web projects",
   "main": "stage-unideck.css",
   "authors": [
@@ -20,6 +20,8 @@
     "**/*.sh"
   ],
   "devDependencies": {
-    "normalize-css": "normalize.css#^5.x.x"
+    "normalize-css": "normalize.css#^5.x.x",
+    "modernizr": "^3.5.0",
+    "detectizr": "^2.2.0"
   }
 }

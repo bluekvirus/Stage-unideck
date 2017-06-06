@@ -9,6 +9,10 @@
 
 		<!-- test styles -->
 		<link rel="stylesheet" href="test.css">
+
+		<!-- must have for browser specific css quirk fixes -->
+		<script src="bower_components/modernizr/modernizr.js"></script>
+		<script src="bower_components/detectizr/dist/detectizr.js"></script>
 	</head>
 	<body>
 
@@ -66,27 +70,39 @@
 
 			<!-- Flex -->
 			<div class="frame">
-				<p>test <span style="color:blue;">.flex .vfill .half</span> (no need to nest .view + .vfill div within .unit-*) </p>
-				<div class="flex vfill half">
-					<div class="unit-3 padded dotted">.unit-3 .padded</div>
-					<div class="unit padded dotted">.unit-1 .padded</div>
-					<div class="unit-2 padded dotted">.unit-2 .padded</div>
-					<div class="unit padded dotted">.unit-1 .padded</div>
+				<p>test <span style="color:blue;">.flex .vfill .half .padded</span> (no need to nest view div within .unit-*) </p>
+				<div class="flex vfill half padded border">
+					<div class="unit-3 padded dashed">.unit-3 .padded</div>
+					<div class="unit padded dashed">.unit-1 .padded</div>
+					<div class="unit-2 padded dashed">.unit-2 .padded</div>
+					<div class="unit padded dashed">.unit-1 .padded</div>
 				</div>
 
-				<p>test <span style="color:blue;">.flex .horizontal .vfill .half</span> (no need to nest .view + .vfill div within .unit-*) </p>
-				<div class="flex horizontal vfill half">
-					<div class="unit padded dotted">.unit-1 .padded</div>
-					<div class="unit-2 padded dotted">.unit-2 .padded</div>
-					<div class="unit-3 padded dotted flex">
+				<p>test <span style="color:blue;">.flex .horizontal .vfill .half .padded</span> (no need to nest view div within .unit-*) </p>
+				<div class="flex horizontal vfill half padded border">
+					<div class="unit padded dashed">.unit-1 .padded</div>
+					<div class="unit-2 padded dashed">.unit-2 .padded</div>
+					<div class="unit-3 padded dashed flex">
 						<!-- <div class="vfill flex"> -->
-						<div class="unit padded dotted">.unit-1 .padded</div>
-						<div class="unit padded dotted">.unit-1 .padded</div>
-						<div class="unit padded dotted">.unit-1 .padded</div>
+						<div class="unit padded dashed">.unit-1 .padded</div>
+						<div class="unit padded dashed">.unit-1 .padded</div>
+						<div class="unit padded dashed">.unit-1 .padded</div>
 						<!-- </div> -->
 					</div>
 				</div>
 			</div>
+
+			<!-- Grid -->
+			<div class="frame">
+				<p>test <span style="color:blue;">.grid() .vfill .padded</span> (no need to nest view div within .grid-item()) </p>
+				<div class="grid grid-default vfill border padded">
+					<div class="grid-item-a border padded dashed">A</div>
+					<div class="grid-item-b border padded dashed">B</div>
+					<div class="grid-item-c border padded dashed">C</div>
+					<div class="grid-item-d border padded dashed">D</div>
+				</div>
+			</div>
+
 			<!-- </div> -->
 		</div>
 	</body>

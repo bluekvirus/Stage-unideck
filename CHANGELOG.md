@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-0.5.2+ (2017-05*)
+0.5.3+ (2017-06*)
 ------------------
 1. Added reset.less;
 2. Added var*.less;
@@ -12,11 +12,12 @@ Change Log
 7. Added .font() mixin for loading web-font;
 8. Enabled .frame nesting with auto stacked styling;
 9. Fixed padded vfill-ed .deck scroll spacing error with bottom padding;
+10. Added .grid() and .grid-item() mixins for using CSS3 display:grid;
+11. Added .media-*({...}) mixins for adding screen specific styles;
 
 working on ...
 
 - colors var (primary-warm/cold, ok, warning, error, info);
-- display:grid for 8 col .grid container and .unit-*, also .grid() mixin;
-- print (US letter) style for containers;
 - theme-wheel mixin (auto colors by color wheel) ?!;
+- print (US letter) style for containers;
 

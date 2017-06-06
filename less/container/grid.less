@@ -1,0 +1,60 @@
+/**
+ * Grid layout container (+mixins)
+ *
+ * Ref
+ * ---
+ * https://css-tricks.com/snippets/css/complete-guide-grid/
+ * 
+ * @author Tim Lauv
+ * @created 2017.06.06
+ */
+
+//default grids
+.grid {
+	//pre-build layout
+	&.grid-default {
+		.grid();
+		.grid-item-a {
+			.grid-item(1, 1 ~'/' 9);
+		}
+		.grid-item-b {
+			.grid-item(2, 1 ~'/' 3);
+		}
+		.grid-item-c {
+			.grid-item(2, 3 ~'/' 9);
+		}
+		.grid-item-d {
+			.grid-item(3, 1 ~'/' 9);
+		}
+	}
+	//...
+}
+
+//mixins
+.grid(@rows : 60px auto 40px, @cols : repeat(8, 1fr)) {
+	display: grid;
+
+	grid-template-columns: @cols; //fr, px, %, em by space 
+	grid-template-rows: @rows;
+
+    .box-sizing();
+    .vfillable();
+    .paddable();
+    .borders();
+}
+
+.grid-item(@row, @col) {
+	grid-column: @col; //number >= 1
+	grid-row: @row;
+
+    //this one doesn't honor position: relative;
+    //this one doesn't honor .vfill helpers and immediate el control;
+    .box-sizing();
+    .paddable();
+    .borders();
+    //use the item itself as the view <div> (instead of another div inside a .vfill unit in a .deck)
+    //&.center {
+    //	align-self: center;
+    //	justify-self: center;
+    //}
+}
