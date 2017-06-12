@@ -1,6 +1,6 @@
 {
   "name": "stage-unideck",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Responsive minimum CSS base for web projects",
   "main": "stage-unideck.css",
   "authors": [

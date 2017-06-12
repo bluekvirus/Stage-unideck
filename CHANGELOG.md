@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-0.9.0+ (2017-06*)
+0.9.1+ (2017-06*)
 ------------------
 1. Added reset.less;
 2. Added var*.less;
@@ -14,6 +14,7 @@ Change Log
 9. Fixed padded vfill-ed .deck scroll spacing error with bottom padding;
 10. Added .grid() and .grid-item() mixins for using CSS3 display:grid;
 11. Added .media-*({...}) mixins for adding screen specific styles;
+12. Added lib folder for redistributing modernizr/detectizr js files;
 
 working on ...
 
