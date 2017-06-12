@@ -20,8 +20,10 @@
     "**/*.sh"
   ],
   "devDependencies": {
-    "normalize-css": "normalize.css#^5.x.x",
     "modernizr": "^3.5.0",
     "detectizr": "^2.2.0"
+  },
+  "dependencies": {
+    "normalize-css": "normalize.css#^5.x.x"
   }
 }
