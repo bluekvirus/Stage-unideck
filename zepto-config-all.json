@@ -1,0 +1,4 @@
+{
+	"modules": "zepto event ajax form ie fx fx_methods data deferred selector touch gesture",
+	"cmd": "MODULES='zepto event data ...modules... ' npm run-script dist"
+}

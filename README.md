@@ -1,6 +1,8 @@
 Stagejs-unideck
 ===============
-Responsive minimum CSS base for Stage.js projects
+<img src="http://img.shields.io/bower/v/stage-unideck.svg?style=flat" alt="Current Version"></img> 
+
+Responsive minimum CSS base for Stage.js and Web projects.
 
 
 Install
@@ -104,6 +106,13 @@ Classes
 Assets
 ------
 You can use our `index.html` as starting point for your front-end project, with static goodies we collected from the **H5BP** project in `assets` folder.
+
+
+Javascript
+----------
+You can also use our `js/entrypoint-*.js` as starting point for your project. These scripts comes in various flavor to bootstrap your mockups.
+
+Look also into the `js/3rd-party/*.js` for the required libs needed to run the entrypoints.
 
 
 Contribute

@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-0.9.1+ (2017-06*)
+0.9.2+ (2017-06*)
 ------------------
 1. Added reset.less;
 2. Added var*.less;
@@ -15,10 +15,13 @@ Change Log
 10. Added .grid() and .grid-item() mixins for using CSS3 display:grid;
 11. Added .media-*({...}) mixins for adding screen specific styles;
 12. Added 3rd party lib files; (modernizr, detectizr, h5bp)
+13. Fixed !DOCTYPE issue;
+14. Removed .frame nesting;
+15. Added mockup app js entrypoints;
 
 working on ...
 
 - colors var (primary-warm/cold, ok, warning, error, info);
 - theme-wheel mixin (auto colors by color wheel) ?!;
-- print (US letter) style for containers;
+- refined print (US letter) style page gap for containers;
 
