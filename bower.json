@@ -16,7 +16,6 @@
     "bower_components",
     "test",
     "tests",
-    "h5bp",
     "**/*.sh"
   ],
   "devDependencies": {

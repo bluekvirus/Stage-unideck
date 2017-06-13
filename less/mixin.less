@@ -1,5 +1,5 @@
 /**
- * Mixins for giving certain .class additional css features;
+ * Mixins for giving certain el additional css features;
  *
  * @author Tim Lauv
  * @created 2017.01.11
@@ -97,5 +97,36 @@
     @font-face {
         font-family: @name;
         src: url('@{file}.woff2') format('woff2'), url('@{file}.woff') format('woff'), url('@{file}.ttf') format('truetype');
+    }
+}
+
+//screen spec styles wrapping helpers (mixins)
+.media-print(@rules) {
+    @media print {
+        @rules();
+    }
+}
+
+.media-too-small(@rules) {
+    @media (max-width: @screen-phone-min) {
+        @rules();
+    }
+}
+
+.media-phone(@rules) {
+    @media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
+        @rules();
+    } 
+}
+
+.media-tablet(@rules) {
+    @media (min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
+        @rules();
+    }
+}
+
+.media-pc(@rules) {
+    @media (min-width: @screen-pc-min) {
+        @rules();
     }
 }

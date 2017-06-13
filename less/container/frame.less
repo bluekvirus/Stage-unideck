@@ -1,9 +1,9 @@
 /**
  * Top most containers inside <body>.
  *
- * .frame --> .deck/.flex/.grid()/.frame --> ...
+ * .frame --> .deck/.flex/.grid() --> ...
  *
- * Note: a immediate .frame within a .frame becomes stacked.
+ * Note: a immediate .frame within a .frame is not supported.
  *
  * @author Tim Lauv
  * @created 2017.05.27
@@ -16,10 +16,4 @@
 	right: 0;
 	bottom: 0;
 	overflow: auto;
-
-	//.frame(s) within a .frame become stacked on top of each other
-	> .frame {
-		position: relative;
-		width: 100%;
-	}
 }

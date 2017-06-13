@@ -1,12 +1,12 @@
 /**
  * h5bp: .clearfix, .invisible, .hidden, @media print reset
- * unideck: .hidden-<screen>, .media-<screen>({...rules...})
+ * unideck: .hidden-<screen>
  *
  * @author Tim Lauv
  * @created 2017.05.27 
  */
 
-@import (inline) 'h5bp/defaults-h5bp.css';
+@import (inline) 'css/h5bp.css';
 
 //hidden content helpers
 .hidden-print {
@@ -42,33 +42,3 @@
 	})
 }
 
-//screen spec styles wrapping helpers (mixins)
-.media-print(@rules) {
-	@media print {
-		@rules();
-	}
-}
-
-.media-too-small(@rules) {
-	@media (max-width: @screen-phone-min) {
-		@rules();
-	}
-}
-
-.media-phone(@rules) {
-	@media (min-width: @screen-phone-min) and (max-width: @screen-phone-max) {
-		@rules();
-	} 
-}
-
-.media-tablet(@rules) {
-	@media (min-width: @screen-tablet-min) and (max-width: @screen-tablet-max) {
-		@rules();
-	}
-}
-
-.media-pc(@rules) {
-	@media (min-width: @screen-pc-min) {
-		@rules();
-	}
-}

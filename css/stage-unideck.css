@@ -495,14 +495,14 @@ html.firefox .deck.padded.vfill > [class^="unit-"]:last-of-type {
   margin-bottom: 0.5em;
 }
 /**
- * Mixins for giving certain .class additional css features;
+ * Mixins for giving certain el additional css features;
  *
  * @author Tim Lauv
  * @created 2017.01.11
  */
 /**
  * h5bp: .clearfix, .invisible, .hidden, @media print reset
- * unideck: .hidden-<screen>, .media-<screen>({...rules...})
+ * unideck: .hidden-<screen>
  *
  * @author Tim Lauv
  * @created 2017.05.27 
@@ -634,18 +634,25 @@ textarea {
 
 /*
  * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
     height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
     width: 1px;
+    white-space: nowrap; /* 1 */
 }
 
 /*
@@ -657,11 +664,14 @@ textarea {
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
     height: auto;
     margin: 0;
     overflow: visible;
     position: static;
     width: auto;
+    white-space: inherit;
 }
 
 /*
@@ -721,8 +731,14 @@ textarea {
     *,
     *:before,
     *:after,
-    *:first-letter,
-    *:first-line {
+    p:first-letter,
+    div:first-letter,
+    blockquote:first-letter,
+    li:first-letter,
+    p:first-line,
+    div:first-line,
+    blockquote:first-line,
+    li:first-line {
         background: transparent !important;
         color: #000 !important; /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
@@ -753,6 +769,9 @@ textarea {
         content: "";
     }
 
+    pre {
+        white-space: pre-wrap !important;
+    }
     pre,
     blockquote {
         border: 1px solid #999;
@@ -771,10 +790,6 @@ textarea {
     tr,
     img {
         page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
     }
 
     p,
@@ -833,9 +848,9 @@ textarea {
 /**
  * Top most containers inside <body>.
  *
- * .frame --> .deck/.flex/.frame --> ...
+ * .frame --> .deck/.flex/.grid() --> ...
  *
- * Note: a immediate .frame within a .frame becomes stacked.
+ * Note: a immediate .frame within a .frame is not supported.
  *
  * @author Tim Lauv
  * @created 2017.05.27
@@ -848,14 +863,10 @@ textarea {
   bottom: 0;
   overflow: auto;
 }
-.frame > .frame {
-  position: relative;
-  width: 100%;
-}
 /**
- * Floating responsive layout .deck --> .unit-* --> .deck/.flex/.frame --> ...
+ * Floating responsive layout .deck --> .unit-* --> .deck/.flex/.grid()/.frame --> ...
  *
- * With .padded and .vfill (.deck and .unit-* have no height by default) as spacing helpers.
+ * With .padded, .vfill and borders (.deck and .unit-* have no height by default) as spacing helpers.
  *
  * Note: .deck is not position:relative, .unit-* are.
  *
@@ -1488,9 +1499,9 @@ textarea {
 /**
  * Flex layout .flex --> .unit-* [+.flex] --> .unit-* [+.flex] --> ...
  *
- * With .padded and .vfill (.flex and .unit-* have no height by default) as spacing helpers.
+ * With .padded, .vfill and borders (.flex have no height by default) as spacing helpers.
  *
- * Note: .flex is not position:relative, .unit-* are.
+ * Note: .flex and .unit-* have no position:relative.
  * Note: .unit-* as a flexbox item can NOT nest another .flex container, 
  * 		 put the .flex directly onto .unit-* as the container instead!
  * Note: .unit-* as a flexbox item can NOT nest another <any tag> el container for it to have height: 100%,
@@ -1619,6 +1630,14 @@ textarea {
 }
 /**
  * Grid layout container (+mixins)
+ *
+ * .grid() --> .grid-item()
+ *
+ * With .padded, .vfill and borders (.grid() have no height by default) as spacing helpers.
+ *
+ * Note: .grid() and .grid-item() have no position:relative;
+ * Note: .grid-item() can NOT nest another <any tag> el container for it to have height: 100%,
+ * 		 since itself is already stretched by align-items. Use the .grid-item() as the el container!
  *
  * Ref
  * ---

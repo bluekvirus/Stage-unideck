@@ -1,20 +1,30 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title> Stage-unideck </title>
+		<meta name="description" content="">
 
 		<!-- main css (and mobile scale fix)-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="stage-unideck.css">
-
+		<link rel="stylesheet" href="css/stage-unideck.css">
 		<!-- test styles -->
-		<link rel="stylesheet" href="test.css">
+		<link rel="stylesheet" href="css/test.css">
 
-		<!-- must have for browser specific css quirk fixes -->
-		<script src="lib/modernizr.js"></script>
-		<script src="lib/detectizr.js"></script>
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<!-- Place favicon.ico in the root directory -->
+
+		<!-- must have for browser specific css,js quirk fixes -->
+		<script src="js/modernizr.js"></script>
+		<script src="js/detectizr.js"></script>
+		<script src="js/h5bp-console-shiv.js"></script>
 	</head>
 	<body>
+
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
 		<!-- Hidden-<screen> -->
 		<div class="frame" style="z-index: -1;">
@@ -28,82 +38,87 @@
 		
 		<div class="frame">
 			<h1 style="text-align: center;">Stage-unideck 8-4-2-1</h1>
-			<!-- <div> -->
-			<!-- Fluid -->
-			<div class="frame">
-				<p>test <span style="color:blue;">.deck</span></p>
-				<div class="deck border">
-					<div class="unit-1 dotted"><div class="view">.unit-1</div></div>
-					<div class="unit-2 dotted"><div class="view">.unit-2</div></div>
-					<div class="unit-3 dotted"><div class="view">.unit-3</div></div>
-					<div class="unit-4 dotted"><div class="view">.unit-4</div></div>
-					<div class="unit-5 dotted"><div class="view">.unit-5</div></div>
-					<div class="unit-6 dotted"><div class="view">.unit-6</div></div>
-					<div class="unit-7 dotted"><div class="view">.unit-7</div></div>
-					<div class="unit-8 dotted"><div class="view">.unit-8</div></div>
-				</div>
-				
-				<p>test <span style="color:blue;">.deck .padded</span></p>
-				<div class="deck padded border">
-					<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
-					<div class="unit-2 padded dotted"><div class="view">.unit-2 .padded</div></div>
-					<div class="unit-3 padded dotted"><div class="view">.unit-3 .padded</div></div>
-					<div class="unit-4 padded dotted"><div class="view">.unit-4 .padded</div></div>
-					<div class="unit-5 padded dotted"><div class="view">.unit-5 .padded</div></div>
-					<div class="unit-6 padded dotted"><div class="view">.unit-6 .padded</div></div>
-					<div class="unit-7 padded dotted"><div class="view">.unit-7 .padded</div></div>
-					<div class="unit-8 padded dotted"><div class="view">.unit-8 .padded</div></div>
-				</div>
 
-				<p>test <span style="color:blue;">.deck .padded .vfill .half</span></p>
-				<div class="deck padded vfill half border">
-					<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
-					<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
-					<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
-					<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div><div style="position: absolute;left: 0;bottom: 0;height: 2em;width: 2em;background: red"></div></div>
-					<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
-					<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
-					<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
-					<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
-				</div>
+			<!-- Fluid -->
+			<p>test <span style="color:blue;">.deck</span></p>
+			<div class="deck border">
+				<div class="unit-1 dotted"><div class="view">.unit-1</div></div>
+				<div class="unit-2 dotted"><div class="view">.unit-2</div></div>
+				<div class="unit-3 dotted"><div class="view">.unit-3</div></div>
+				<div class="unit-4 dotted"><div class="view">.unit-4</div></div>
+				<div class="unit-5 dotted"><div class="view">.unit-5</div></div>
+				<div class="unit-6 dotted"><div class="view">.unit-6</div></div>
+				<div class="unit-7 dotted"><div class="view">.unit-7</div></div>
+				<div class="unit-8 dotted"><div class="view">.unit-8</div></div>
 			</div>
+			
+			<p>test <span style="color:blue;">.deck .padded</span></p>
+			<div class="deck padded border">
+				<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
+				<div class="unit-2 padded dotted"><div class="view">.unit-2 .padded</div></div>
+				<div class="unit-3 padded dotted"><div class="view">.unit-3 .padded</div></div>
+				<div class="unit-4 padded dotted"><div class="view">.unit-4 .padded</div></div>
+				<div class="unit-5 padded dotted"><div class="view">.unit-5 .padded</div></div>
+				<div class="unit-6 padded dotted"><div class="view">.unit-6 .padded</div></div>
+				<div class="unit-7 padded dotted"><div class="view">.unit-7 .padded</div></div>
+				<div class="unit-8 padded dotted"><div class="view">.unit-8 .padded</div></div>
+			</div>
+
+			<p>test <span style="color:blue;">.deck .padded .vfill .half</span></p>
+			<div class="deck padded vfill half border">
+				<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
+				<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
+				<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div></div>
+				<div class="unit-1 padded dotted"><div class="view">.unit-1 .padded</div><div style="position: absolute;left: 0;bottom: 0;height: 2em;width: 2em;background: red"></div></div>
+				<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
+				<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
+				<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
+				<div class="unit-1 padded vfill dotted"><div class="view">.unit-1 .padded .vfill</div></div>
+			</div>
+
 
 			<!-- Flex -->
-			<div class="frame">
-				<p>test <span style="color:blue;">.flex .vfill .half .padded</span> (no need to nest view div within .unit-*) </p>
-				<div class="flex vfill half padded border">
-					<div class="unit-3 padded dashed">.unit-3 .padded</div>
-					<div class="unit padded dashed">.unit-1 .padded</div>
-					<div class="unit-2 padded dashed">.unit-2 .padded</div>
-					<div class="unit padded dashed">.unit-1 .padded</div>
-				</div>
+			<p>test <span style="color:blue;">.flex .vfill .half .padded</span> (no need to nest view div within .unit-*) </p>
+			<div class="flex vfill half padded border">
+				<div class="unit-3 padded dashed">.unit-3 .padded</div>
+				<div class="unit padded dashed">.unit-1 .padded</div>
+				<div class="unit-2 padded dashed">.unit-2 .padded</div>
+				<div class="unit padded dashed">.unit-1 .padded</div>
+			</div>
 
-				<p>test <span style="color:blue;">.flex .horizontal .vfill .half .padded</span> (no need to nest view div within .unit-*) </p>
-				<div class="flex horizontal vfill half padded border">
+			<p>test <span style="color:blue;">.flex .horizontal .vfill .half .padded</span> (no need to nest view div within .unit-*) </p>
+			<div class="flex horizontal vfill half padded border">
+				<div class="unit padded dashed">.unit-1 .padded</div>
+				<div class="unit-2 padded dashed">.unit-2 .padded</div>
+				<div class="unit-3 padded dashed flex">
+					<!-- <div class="vfill flex"> -->
 					<div class="unit padded dashed">.unit-1 .padded</div>
-					<div class="unit-2 padded dashed">.unit-2 .padded</div>
-					<div class="unit-3 padded dashed flex">
-						<!-- <div class="vfill flex"> -->
-						<div class="unit padded dashed">.unit-1 .padded</div>
-						<div class="unit padded dashed">.unit-1 .padded</div>
-						<div class="unit padded dashed">.unit-1 .padded</div>
-						<!-- </div> -->
-					</div>
+					<div class="unit padded dashed">.unit-1 .padded</div>
+					<div class="unit padded dashed">.unit-1 .padded</div>
+					<!-- </div> -->
 				</div>
 			</div>
+
 
 			<!-- Grid -->
-			<div class="frame">
-				<p>test <span style="color:blue;">.grid() .vfill .padded</span> (no need to nest view div within .grid-item()) </p>
-				<div class="grid grid-default vfill border padded">
-					<div class="grid-item-a padded dashed">A</div>
-					<div class="grid-item-b padded dashed">B</div>
-					<div class="grid-item-c padded dashed">C</div>
-					<div class="grid-item-d padded dashed">D</div>
-				</div>
+			<p>test <span style="color:blue;">.grid() .vfill .padded</span> (no need to nest view div within .grid-item()) </p>
+			<div class="grid grid-default vfill border padded">
+				<div class="grid-item-a padded dashed">A</div>
+				<div class="grid-item-b padded dashed">B</div>
+				<div class="grid-item-c padded dashed">C</div>
+				<div class="grid-item-d padded dashed">D</div>
 			</div>
 
-			<!-- </div> -->
 		</div>
+
+		<!-- 3rd party libs (see bower.json) -->
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 	</body>
 </html>

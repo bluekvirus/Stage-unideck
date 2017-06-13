@@ -14,7 +14,7 @@ Change Log
 9. Fixed padded vfill-ed .deck scroll spacing error with bottom padding;
 10. Added .grid() and .grid-item() mixins for using CSS3 display:grid;
 11. Added .media-*({...}) mixins for adding screen specific styles;
-12. Added lib folder for redistributing modernizr/detectizr js files;
+12. Added 3rd party lib files; (modernizr, detectizr, h5bp)
 
 working on ...
 
