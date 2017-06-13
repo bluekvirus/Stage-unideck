@@ -875,7 +875,7 @@ textarea {
  */
 .deck {
   width: 100%;
-  overflow: auto;
+  overflow: visible;
   zoom: 1;
   /*
      * Clearfix: contain floats (from h5bp:helpers)

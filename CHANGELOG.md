@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-0.9.2+ (2017-06*)
+0.9.4+ (2017-06*)
 ------------------
 1. Added reset.less;
 2. Added var*.less;
@@ -18,6 +18,8 @@ Change Log
 13. Fixed !DOCTYPE issue;
 14. Removed .frame nesting;
 15. Added mockup app js entrypoints;
+16. Fixed css relative path error in release version;
+17. Fixed clearfix() mixin incompatible issue with Twitter Bootstrap;
 
 working on ...
 
